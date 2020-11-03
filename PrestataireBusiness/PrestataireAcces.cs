@@ -1,7 +1,13 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using static System.Net.Mime.MediaTypeNames;
+
 
 namespace PrestataireBusiness
 {
@@ -39,11 +45,23 @@ namespace PrestataireBusiness
                         Business.Prestataires.Add(new Prestataire(id, nom, url, categorie, contact, adresse, description, activation, prix));
 
                     }
-
                 }
                 command.Connection.Close();
             }
-
+        }
+        public static void GetUrlPrestataire()
+        {
+            String sql = "SELECT url FROM prestataire";
+            using (MySqlCommand command = new MySqlCommand(sql, connection))
+            {
+                command.Connection.Open();
+                using (DbDataReader dbReader = command.ExecuteReader())
+                {
+                    string url = dbReader.GetString(3);
+                    Business.Prestataires.Add(new Prestataire(url));
+                }
+                command.Connection.Close();
+            }
         }
 
         public static bool InsertPrestataire(Prestataire p)
@@ -67,7 +85,6 @@ namespace PrestataireBusiness
                 cmd.Connection.Close();
                 return result;
             }
-
         }
         public static bool UpdatePrestataire(Prestataire p)
         {
@@ -93,6 +110,5 @@ namespace PrestataireBusiness
 
             }
         }
-
     }
 }
