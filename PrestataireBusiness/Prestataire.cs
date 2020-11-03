@@ -15,5 +15,18 @@ namespace PrestataireBusiness
         public String adresse { get; set; }
         public String description { get; set; }
         public Boolean activation { get; set; }
+
+        public Prestataire(int id, String nom, String url, String categorie, String contact, String adresse,
+                       String description, Boolean activation)
+        {
+            this.id = id;
+            this.nom = nom;
+            this.url = url;
+            this.categorie = categorie;
+            this.contact = contact;
+            this.adresse = adresse;
+            this.description = description;
+            this.activation = activation;
+        }
     }
 }
