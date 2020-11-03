@@ -17,12 +17,12 @@ namespace PrestataireBusiness
 
         static PrestataireAcces()
         {
-            String connString = "Server=remotemysql.com/phpmyadmin/sql.php?server=1&db=qgO0M364Or&table=Prestataire&pos=0;Database=qgO0M364Or;userid=sgroot;Pwd=7Hyomgetg3";
+            String connString = "Server=remotemysql.com;Database=qgO0M364Or;userid=qgO0M364Or;Pwd=7Hyomgetg3";
             connection = new MySqlConnection(connString);
         }
         public static void GetPrestataire()
         {
-            String sql = "SELECT * FROM prestataire";
+            String sql = "SELECT * FROM Prestataire";
             using (MySqlCommand command = new MySqlCommand(sql, connection))
             {
                 command.Connection.Open();
@@ -31,18 +31,18 @@ namespace PrestataireBusiness
                 {
                     while (dbReader.Read())
                     {
-                        int id = dbReader.GetInt32(0);
-                        string nom = dbReader.GetString(1);
-                        string url = dbReader.GetString(2);
-                        string categorie = dbReader.GetString(3);
-                        string contact = dbReader.GetString(4);
-                        string adresse = dbReader.GetString(5);
-                        string description = dbReader.GetString(6);
-                        bool activation = dbReader.GetBoolean(7);
-                        int prix = dbReader.GetInt32(8);
+                        int Id = dbReader.GetInt32(0);
+                        String Nom = dbReader.GetString(1);
+                        String Url = dbReader.GetString(2);
+                        String Categorie = dbReader.GetString(3);
+                        String Contact = dbReader.GetString(4);
+                        String Adresse = dbReader.GetString(5);
+                        String Description = dbReader.GetString(6);
+                        Boolean Activation = dbReader.GetBoolean(7);
+                        int Prix = dbReader.GetInt32(8);
 
                         // attente de la création de la class business
-                        Business.Prestataires.Add(new Prestataire(id, nom, url, categorie, contact, adresse, description, activation, prix));
+                        Business.Prestataires.Add(new Prestataire(Id, Nom, Url, Categorie, Contact, Adresse, Description, Activation, Prix));
 
                     }
                 }
@@ -51,7 +51,7 @@ namespace PrestataireBusiness
         }
         public static void GetUrlPrestataire()
         {
-            String sql = "SELECT url FROM prestataire";
+            String sql = "SELECT url FROM Prestataire";
             using (MySqlCommand command = new MySqlCommand(sql, connection))
             {
                 command.Connection.Open();
@@ -66,7 +66,7 @@ namespace PrestataireBusiness
 
         public static bool InsertPrestataire(Prestataire p)
         {
-            string sql = "INSERT INTO prestataire(Id, Nom, Url, Categorie, Contact, Adresse, Description, Activation, Prix) " +
+            string sql = "INSERT INTO Prestataire(Id, Nom, Url, Categorie, Contact, Adresse, Description, Activation, Prix) " +
                          "VALUE (@id, @nom, @url, @categorie, @contact, @adresse, @description, @activation, @prix)";
             using (MySqlCommand cmd = new MySqlCommand(sql, connection))
             {
@@ -88,7 +88,7 @@ namespace PrestataireBusiness
         }
         public static bool UpdatePrestataire(Prestataire p)
         {
-            string sql = "UPDATE prestataire SET Nom=@nom, Url=@url, Categorie=@categorie, Contact=@contact, Adresse=@adresse, Description=@description, Prix=@prix "
+            string sql = "UPDATE Prestataire SET Nom=@nom, Url=@url, Categorie=@categorie, Contact=@contact, Adresse=@adresse, Description=@description, Prix=@prix "
                 + " Where id=@id ";
 
             using (MySqlCommand cmd = new MySqlCommand(sql, connection))
