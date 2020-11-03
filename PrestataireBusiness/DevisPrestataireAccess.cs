@@ -13,7 +13,6 @@ namespace PrestataireBusiness
     public class DevisPrestataireAccess
     {
         private static MySqlConnection connection;
-
         static DevisPrestataireAccess()
         {
             String connString = "Server=remotemysql.com;Database=qgO0M364Or;userid=qgO0M364Or;Pwd=7Hyomgetg3";
@@ -36,12 +35,10 @@ namespace PrestataireBusiness
                         int prixid = dbReader.GetInt32(3);
 
                         Business.DevisPrestataire.Add(new DevisPrestataire(id, devisid, prestataireid, prixid));
-
                     }
                 }
                 command.Connection.Close();
             }
-
         }
         public static bool InsertDevisPrestataire(DevisPrestataire p)
         {

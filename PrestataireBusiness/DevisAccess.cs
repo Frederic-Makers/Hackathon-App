@@ -14,7 +14,6 @@ namespace DevisBusiness
     public class DevisAccess
     {
         public static MySqlConnection connection;
-
         static DevisAccess()
         {
             String connString = "Server=remotemysql.com;Database=qgO0M364Or;userid=qgO0M364Or;Pwd=7Hyomgetg3";

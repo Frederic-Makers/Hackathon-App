@@ -14,7 +14,6 @@ namespace PrestataireBusiness
     public class PrestataireAcces
     {
         private static MySqlConnection connection;
-
         static PrestataireAcces()
         {
             String connString = "Server=remotemysql.com;Database=qgO0M364Or;userid=qgO0M364Or;Pwd=7Hyomgetg3";
@@ -63,7 +62,6 @@ namespace PrestataireBusiness
                 command.Connection.Close();
             }
         }
-
         public static bool InsertPrestataire(Prestataire p)
         {
             string sql = "INSERT INTO Prestataire(Id, Nom, Url, Categorie, Contact, Adresse, Description, Activation, Prix) " +
