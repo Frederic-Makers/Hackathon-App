@@ -17,6 +17,10 @@ namespace PrestataireBusiness
         public Boolean Activation { get; set; }
         public int Prix { get; set; }
 
+        public Prestataire()
+        {
+
+        }
         public Prestataire(int id, String nom, String url, String categorie, String contact, String adresse,
                        String description, Boolean activation, int prix)
         {
