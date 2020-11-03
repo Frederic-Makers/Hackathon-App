@@ -13,13 +13,13 @@
         <Menu DockPanel.Dock="Top" Height="31" Background="#FF3C484D" Margin="10,1,0,0" Padding="0,1,0,0">
 
             <MenuItem Header="_Fichier" InputGestureText = "Ctrl + O" Foreground="#FFB7C3C8" Template="{DynamicResource MakersMenuItemStyle}" Margin="0,1,0,11" >
-                <MenuItem  Header="_Nouveau" Foreground="#FFB7C3C8" Background="#FF2F3439" Width="133" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <MenuItem Header="_Imprimer" Foreground="#FFB7C3C8" Background="#FF2F3439"/>
+                <MenuItem x:Name="NEW" Click="NEW_Click" Header="_Nouveau" Foreground="#FFB7C3C8" Background="#FF2F3439" Width="133" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <MenuItem x:Name="PRINT" Click="PRINT_Click" Header="_Imprimer" Foreground="#FFB7C3C8" Background="#FF2F3439"/>
                 <Separator Background="#FF1F292E" Margin="0,1"/>
-                <MenuItem Header="_Quitter" Foreground="#FFB7C3C8" Background="#FF2F3439"/>
+                <MenuItem x:Name="EXIT" Click="EXIT_Click" Header="_Quitter" Foreground="#FFB7C3C8" Background="#FF2F3439"/>
             </MenuItem>
             <MenuItem Header="_DataBase" InputGestureText = "Ctrl + O" Foreground="#FFB7C3C8" Template="{DynamicResource MakersMenuItemStyle}" Margin="0,1,0,11" >
-                <MenuItem  Header="_Charger Prestataire" Foreground="#FFB7C3C8" Background="#FF2F3439"/>
+                <MenuItem x:Name="LOADPrestaMenu" Click="LOADPrestaMenu_Click" Header="_Charger Prestataire" Foreground="#FFB7C3C8" Background="#FF2F3439"/>
 
             </MenuItem>
 
@@ -41,14 +41,14 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="713*" />
                             </Grid.ColumnDefinitions>
-                            <Image Height="147" VerticalAlignment="Top" Grid.Column="0" Source="" Margin="4,74,0,0" HorizontalAlignment="Left" Width="193"/>
-                            <Label VerticalAlignment="Top" Width="194" Height="49" FontFamily="Tahoma" Content="" FontSize="24" Margin="4,20,515,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FF00CB37" Padding="5" BorderThickness="1" Background="#FF98FF81"/>
-                            <Label HorizontalAlignment="Left" Margin="304,20,0,0" VerticalAlignment="Top" Width="163" Height="30" Content="" FontWeight="Bold" Background="#FFC79A23"/>
-                            <Label HorizontalAlignment="Left" Margin="316,55,0,0" VerticalAlignment="Top" Width="94" Height="30" Content="" FontWeight="Bold" Background="#FFC79A23"/>
+                            <Image Height="147" VerticalAlignment="Top" Grid.Column="0" Source="{Binding url}" Margin="4,74,0,0" HorizontalAlignment="Left" Width="193"/>
+                            <Label VerticalAlignment="Top" Width="194" Height="49" FontFamily="Tahoma" Content="{Binding categorie}" FontSize="24" Margin="4,20,515,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FF00CB37" Padding="5" BorderThickness="1" Background="#FF98FF81"/>
+                            <Label HorizontalAlignment="Left" Margin="304,20,0,0" VerticalAlignment="Top" Width="163" Height="30" Content="{Binding contact}" FontWeight="Bold" Background="#FFC79A23"/>
+                            <Label HorizontalAlignment="Left" Margin="316,55,0,0" VerticalAlignment="Top" Width="94" Height="30" Content="{Binding adresse}" FontWeight="Bold" Background="#FFC79A23"/>
                             <TextBlock HorizontalAlignment="Left" Margin="584,22,0,0" VerticalAlignment="Top" Width="119" Height="30" Text="" TextWrapping="Wrap" FontWeight="Bold" Background="#FFC79A23"/>
-                            <Label HorizontalAlignment="Left" Margin="584,56,0,0" VerticalAlignment="Top" Width="119" Height="30" Content="" FontWeight="Bold" Background="#FFC79A23"/>
+                            <Label HorizontalAlignment="Left" Margin="584,56,0,0" VerticalAlignment="Top" Width="119" Height="30" Content="{Binding description}" FontWeight="Bold" Background="#FFC79A23"/>
                             <TextBlock HorizontalAlignment="Left" Margin="304,91,0,0" VerticalAlignment="Top" Width="399" Height="93" Text="" TextWrapping="Wrap" FontWeight="Bold" Background="#FFC79A23"/>
-                            <Label HorizontalAlignment="Left" Margin="304,189,0,0" VerticalAlignment="Top" Width="198" Height="30" Content="" FontWeight="Bold" Background="#FFC79A23"/>
+                            <Label HorizontalAlignment="Left" Margin="304,189,0,0" VerticalAlignment="Top" Width="198" Height="30" Content="{Binding activation}" FontWeight="Bold" Background="#FFC79A23"/>
                             <Label HorizontalAlignment="Left" Margin="472,22,0,0" VerticalAlignment="Top" Width="107" Height="30" Content="Ingrédient :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF7E8E8"/>
                             <Label HorizontalAlignment="Left" Margin="459,56,0,0" VerticalAlignment="Top" Width="120" Height="30" Content="Nmbr. de personne :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
                             <Label HorizontalAlignment="Left" Margin="203,22,0,0" VerticalAlignment="Top" Width="65" Height="30" Content="Catégorie :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
@@ -56,6 +56,7 @@
                             <Label HorizontalAlignment="Left" Margin="203,112,0,0" VerticalAlignment="Top" Width="115" Height="30" Content="Mode prépation :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
                             <Label HorizontalAlignment="Left" Margin="203,191,0,0" VerticalAlignment="Top" Width="83" Height="30" Content="Origine :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
                             <Rectangle HorizontalAlignment="Left" Height="240" Stroke="#FFCB6600" VerticalAlignment="Top" Width="713" StrokeThickness="3" Opacity="0.7"/>
+                        
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -64,13 +65,14 @@
 
             <Image Source="/img/FiltreLog.png" Height="29" Margin="0,80,17,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="33" />
             
-            <Button Content="Ajouter" Margin="16,112,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" Click="Button_Click_Add" HorizontalAlignment="Left" Width="236" Foreground="#FFB7C3C8" FontFamily="Calibri" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Padding="1,1,1,3" BorderThickness="1"/>
-            <Button Content="Modifier" Margin="15,146,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
-            <Button Content="Filtrer la catégorie" Margin="0,83,48,0" VerticalAlignment="Top" Height="24" HorizontalAlignment="Right" Width="142" RenderTransformOrigin="0.454,1.379" Background="#FF2F3439" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" FontFamily="Calibri" Foreground="#FFB7C3C8" BorderBrush="#FF444B4F"/>
-            <TextBox x:Name="categorieFiltre" Height="24" Margin="0,83,195,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderBrush="#FF7C7777" Background="#FF636C70" SelectionBrush="#FFEE625A" FontFamily="Calibri" Padding="0,1,19,0" FontSize="16" TextAlignment="Right" HorizontalAlignment="Right" Width="156" Style="{DynamicResource RoundedTextBoxStyle}" Foreground="Black"/>
-            <Button Content="Devis non-traiter" Margin="16,283,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
-            <Button Content="Devis traiter" Margin="15,317,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
-            <Button Content="Charger tous les prestataires" Margin="16,180,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
+            <Button x:Name="ADDPresta" Click="ADDPresta_Click" Content="Ajouter" Margin="16,112,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" HorizontalAlignment="Left" Width="236" Foreground="#FFB7C3C8" FontFamily="Calibri" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Padding="1,1,1,3" BorderThickness="1"/>
+            <Button x:Name="EDITPresta" Click="EDITPresta_Click" Content="Modifier" Margin="15,146,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
+            <Button x:Name="LOADPresta" Click="LOADPresta_Click" Content="Charger tous les prestataires" Margin="16,180,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
+            <Button x:Name="FILTERPresta" Click="FILTERPresta_Click"  Content="Filtrer la catégorie" Margin="0,83,48,0" VerticalAlignment="Top" Height="24" HorizontalAlignment="Right" Width="142" RenderTransformOrigin="0.454,1.379" Background="#FF2F3439" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" FontFamily="Calibri" Foreground="#FFB7C3C8" BorderBrush="#FF444B4F"/>
+            <TextBox x:Name="MyfilterCategorie" Height="24" Margin="0,83,195,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderBrush="#FF7C7777" Background="#FF636C70" SelectionBrush="#FFEE625A" FontFamily="Calibri" Padding="0,1,19,0" FontSize="16" TextAlignment="Right" HorizontalAlignment="Right" Width="156" Style="{DynamicResource RoundedTextBoxStyle}" Foreground="Black"/>
+            <Button x:Name="UnfinishedDevis" Click="UnfinishedDevis_Click"  Content="Devis non-traiter" Margin="16,283,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
+            <Button x:Name="finishedDevis" Click="finishedDevis_Click" Content="Devis traiter" Margin="15,317,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
+            
             <Label Content="Gestion Prestataire" HorizontalAlignment="Left" Margin="79,83,0,0" VerticalAlignment="Top" Foreground="White"/>
             <Label Content="Gestion Devis" HorizontalAlignment="Left" Margin="94,252,0,0" VerticalAlignment="Top" Foreground="White"/>
         </Grid>

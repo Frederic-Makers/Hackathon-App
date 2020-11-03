@@ -10,23 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Hackathon_App
+namespace Hackathon_App.UI
 {
     /// <summary>
-    /// Interaction logic for WindowAjout.xaml
+    /// Interaction logic for AppItems.xaml
     /// </summary>
-    public partial class WindowAdd : Window
+    public partial class AppItems : UserControl
     {
-        public MainWindow mw;
-        public WindowAdd(MainWindow mw)
+        public AppItems()
         {
             InitializeComponent();
-
-            this.mw = mw;
-
         }
-
     }
 }
