@@ -5,28 +5,30 @@ using System.Text;
 namespace PrestataireBusiness
 {
 
-    class Prestataire
+    public class Prestataire
     {
-        public int id { get; set; }
-        public String nom { get; set; }
-        public String url { get; set; }
-        public String categorie { get; set; }
-        public String contact { get; set; }
-        public String adresse { get; set; }
-        public String description { get; set; }
-        public Boolean activation { get; set; }
+        public int Id { get; set; }
+        public String Nom { get; set; }
+        public String Url { get; set; }
+        public String Categorie { get; set; }
+        public String Contact { get; set; }
+        public String Adresse { get; set; }
+        public String Description { get; set; }
+        public Boolean Activation { get; set; }
+        public int Prix { get; set; }
 
         public Prestataire(int id, String nom, String url, String categorie, String contact, String adresse,
-                       String description, Boolean activation)
+                       String description, Boolean activation, int prix)
         {
-            this.id = id;
-            this.nom = nom;
-            this.url = url;
-            this.categorie = categorie;
-            this.contact = contact;
-            this.adresse = adresse;
-            this.description = description;
-            this.activation = activation;
+            this.Id = id;
+            this.Nom = nom;
+            this.Url = url;
+            this.Categorie = categorie;
+            this.Contact = contact;
+            this.Adresse = adresse;
+            this.Description = description;
+            this.Activation = activation;
+            this.Prix = prix;
         }
     }
 }
