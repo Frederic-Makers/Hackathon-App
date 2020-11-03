@@ -17,13 +17,13 @@ namespace DevisBusiness
 
         static DevisAccess()
         {
-            String connString = "Server=remotemysql.com;Database=qgO0M364Or;userid=sgroot;Pwd=7Hyomgetg3";
+            String connString = "Server=remotemysql.com;Database=qgO0M364Or;userid=qgO0M364Or;Pwd=7Hyomgetg3";
             connection = new MySqlConnection(connString);
         }
     
         public static void GetDevis()
         {
-            String sql = "SELECT * FROM devis";
+            String sql = "SELECT * FROM Devis";
             using (MySqlCommand command = new MySqlCommand(sql, connection))
             {
                 command.Connection.Open();
@@ -31,14 +31,14 @@ namespace DevisBusiness
                 {
                     while (dbReader.Read())
                     {
-                        int id = dbReader.GetInt32(0);
-                        string nom = dbReader.GetString(1);
-                        string prenom = dbReader.GetString(2);
-                        string email = dbReader.GetString(3);
-                        string exigence = dbReader.GetString(4);
-                        int numero = dbReader.GetInt32(5);
+                        int Id = dbReader.GetInt32(0);
+                        string Nom = dbReader.GetString(1);
+                        string Prenom = dbReader.GetString(2);
+                        string Email = dbReader.GetString(3);
+                        string Exigence = dbReader.GetString(4);
+                        int Numero = dbReader.GetInt32(5);
                    
-                        Business.Devis.Add(new Devis(id, nom, prenom, email, exigence, numero));
+                        Business.Devis.Add(new Devis(Id, Nom, Prenom, Email, Exigence, Numero));
                     }
                 }
                 command.Connection.Close();
@@ -46,7 +46,7 @@ namespace DevisBusiness
         }
         public static bool InsertDevis(Devis d)
         {
-            string sql = "INSERT INTO prestataire(Id, Nom, Prenom, Email, Exigence, Numero) " +
+            string sql = "INSERT INTO Devis(Id, Nom, Prenom, Email, Exigence, Numero) " +
                          "VALUE (@id, @nom, @prenom, @email, @exigence, @numero)";
             using (MySqlCommand cmd = new MySqlCommand(sql, connection))
             {
@@ -65,7 +65,7 @@ namespace DevisBusiness
         }
         public static bool UpdateDevis(Devis d)
         {
-            string sql = "UPDATE devis SET Nom=@nom, Prenom=@prenom, Email=@email, Exigence=@exigence, Numero=@numero" + 
+            string sql = "UPDATE Devis SET Nom=@nom, Prenom=@prenom, Email=@email, Exigence=@exigence, Numero=@numero" + 
                          "Where id=@id";
             using (MySqlCommand cmd = new MySqlCommand(sql, connection))
             {
