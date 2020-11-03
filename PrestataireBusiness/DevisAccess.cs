@@ -6,5 +6,6 @@ namespace PrestataireBusiness
 {
     class DevisAccess
     {
+        public static
     }
 }
