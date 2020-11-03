@@ -43,9 +43,56 @@ namespace PrestataireBusiness
                 }
                 command.Connection.Close();
             }
+
         }
 
+        public static bool InsertPrestataire(Prestataire p)
+        {
+            string sql = "INSERT INTO prestataire(Id, Nom, Url, Categorie, Contact, Adresse, Description, Activation, Prix) " +
+                         "VALUE (@id, @nom, @url, @categorie, @contact, @adresse, @description, @activation, @prix)";
+            using (MySqlCommand cmd = new MySqlCommand(sql, connection))
+            {
+                cmd.Connection.Open();
+                cmd.Parameters.AddWithValue("@id", null);
+                cmd.Parameters.AddWithValue("@nom", p.Nom);
+                cmd.Parameters.AddWithValue("@url", p.Url);
+                cmd.Parameters.AddWithValue("@categorie", p.Categorie);
+                cmd.Parameters.AddWithValue("@contact", p.Contact);
+                cmd.Parameters.AddWithValue("@adresse", p.Adresse);
+                cmd.Parameters.AddWithValue("@description", p.Description);
+                cmd.Parameters.AddWithValue("@activation", p.Activation);
+                cmd.Parameters.AddWithValue("@prix", p.Prix);
+                
+                bool result = cmd.ExecuteNonQuery() == 1;
+                cmd.Connection.Close();
+                return result;
+            }
 
+        }
+        public static bool UpdatePrestataire(Prestataire p)
+        {
+            string sql = "UPDATE prestataire SET Nom=@nom, Url=@url, Categorie=@categorie, Contact=@contact, Adresse=@adresse, Description=@description, Prix=@prix "
+                + " Where id=@id ";
+
+            using (MySqlCommand cmd = new MySqlCommand(sql, connection))
+            {
+                cmd.Connection.Open();
+
+                cmd.Parameters.AddWithValue("@id", p.Id);
+                cmd.Parameters.AddWithValue("@nom", p.Nom);
+                cmd.Parameters.AddWithValue("@url", p.Url);
+                cmd.Parameters.AddWithValue("@categorie", p.Categorie);
+                cmd.Parameters.AddWithValue("@contact", p.Contact);
+                cmd.Parameters.AddWithValue("@adresse", p.Adresse);
+                cmd.Parameters.AddWithValue("@description", p.Description);
+                cmd.Parameters.AddWithValue("@prix", p.Prix);
+
+                bool result = cmd.ExecuteNonQuery() == 1;
+                cmd.Connection.Close();
+                return result;
+
+            }
+        }
 
     }
 }
