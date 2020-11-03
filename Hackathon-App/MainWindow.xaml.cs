@@ -24,5 +24,11 @@ namespace Hackathon_App
         {
             InitializeComponent();
         }
+
+        private void Button_Click_Add(object sender, RoutedEventArgs e)
+        {
+            WindowAjout wa = new WindowAjout(this);
+            wa.Show();
+        }
     }
 }

@@ -5,8 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hackathon_App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="536" Width="800">
+    <DockPanel Margin="0,0,0,1">
+        <Menu DockPanel.Dock="Top" Height="31" Background="#FF111010">
+
+            <MenuItem  Header="_Fichier" Background="#FF0D1100" Foreground="White" Height="32" Width="91" BorderThickness="2,1,1,1" FontSize="16" FontWeight="Bold"  >
+                <MenuItem Header="_Nouveau" Background="#FF232E3C" BorderBrush="{x:Null}" Foreground="White"/>
+                <MenuItem Header="_Imprimer" Background="#FF232E3C"/>
+                <Separator />
+                <MenuItem Header="_Quitter"  Background="#FF232E3C"/>
+            </MenuItem>
+            <MenuItem Header="_Requêtes" Background="Black" Foreground="White" Height="32" Width="93" FontSize="16" FontWeight="Bold" >
+                <MenuItem  Header="Charger la Base de données Prestataires" Background="#FF232E3C"/>
+
+            </MenuItem>
+
+        </Menu>
+        <Grid Background="#FF4F787C">
+            <ListView x:Name ="Mygrid" Margin="10,115,10,48">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30*"/>
+                                <RowDefinition Height="29*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="713*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Height="147" VerticalAlignment="Top" Grid.Column="0" Source="" Margin="4,74,0,0" HorizontalAlignment="Left" Width="193"/>
+                            <Label VerticalAlignment="Top" Width="194" Height="49" FontFamily="Tahoma" Content="" FontSize="24" Margin="4,20,515,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FF00CB37" Padding="5" BorderThickness="1" Background="#FF98FF81"/>
+                            <Label HorizontalAlignment="Left" Margin="304,20,0,0" VerticalAlignment="Top" Width="163" Height="30" Content="" FontWeight="Bold" Background="#FFC79A23"/>
+                            <Label HorizontalAlignment="Left" Margin="316,55,0,0" VerticalAlignment="Top" Width="94" Height="30" Content="" FontWeight="Bold" Background="#FFC79A23"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="584,22,0,0" VerticalAlignment="Top" Width="119" Height="30" Text="" TextWrapping="Wrap" FontWeight="Bold" Background="#FFC79A23"/>
+                            <Label HorizontalAlignment="Left" Margin="584,56,0,0" VerticalAlignment="Top" Width="119" Height="30" Content="" FontWeight="Bold" Background="#FFC79A23"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="304,91,0,0" VerticalAlignment="Top" Width="399" Height="93" Text="" TextWrapping="Wrap" FontWeight="Bold" Background="#FFC79A23"/>
+                            <Label HorizontalAlignment="Left" Margin="304,189,0,0" VerticalAlignment="Top" Width="198" Height="30" Content="" FontWeight="Bold" Background="#FFC79A23"/>
+                            <Label HorizontalAlignment="Left" Margin="472,22,0,0" VerticalAlignment="Top" Width="107" Height="30" Content="Ingrédient :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF7E8E8"/>
+                            <Label HorizontalAlignment="Left" Margin="459,56,0,0" VerticalAlignment="Top" Width="120" Height="30" Content="Nmbr. de personne :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
+                            <Label HorizontalAlignment="Left" Margin="203,22,0,0" VerticalAlignment="Top" Width="65" Height="30" Content="Catégorie :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
+                            <Label HorizontalAlignment="Left" Margin="203,56,0,0" VerticalAlignment="Top" Width="108" Height="30" Content="Temps de prépa :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
+                            <Label HorizontalAlignment="Left" Margin="203,112,0,0" VerticalAlignment="Top" Width="115" Height="30" Content="Mode prépation :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
+                            <Label HorizontalAlignment="Left" Margin="203,191,0,0" VerticalAlignment="Top" Width="83" Height="30" Content="Origine :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
+                            <Rectangle HorizontalAlignment="Left" Height="240" Stroke="#FFCB6600" VerticalAlignment="Top" Width="713" StrokeThickness="3" Opacity="0.7"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Content="Ajouter un Prestataire" Margin="10,20,585,0" VerticalAlignment="Top" Height="58" RenderTransformOrigin="0.623,2.471" Background="#FFD8D8D8" FontSize="14" FontWeight="Bold" Click="Button_Click_Add"/>
+            <Button Content="Afficher par catégorie" Margin="0,37,76,0" VerticalAlignment="Top" Height="23" HorizontalAlignment="Right" Width="130" RenderTransformOrigin="0.454,1.379" Background="#FFD6D6D6" FontWeight="Bold"/>
+            <TextBox x:Name="categorieFiltre" Height="25" Margin="0,76,57,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="149" BorderBrush="#FF191818" Background="#FFECECEC"/>
+            <Button Content="Gérer les Devis" Margin="225,20,370,0" VerticalAlignment="Top" Height="58" RenderTransformOrigin="0.623,2.471" Background="#FFD8D8D8" FontSize="14" FontWeight="Bold"/>
+        </Grid>
+    </DockPanel>
+
 </Window>

@@ -19,9 +19,13 @@ namespace Hackathon_App
     /// </summary>
     public partial class WindowAjout : Window
     {
-        public WindowAjout()
+        public MainWindow mw;
+        public WindowAjout(MainWindow mw)
         {
             InitializeComponent();
+
+            this.mw = mw;
+
         }
     }
 }
