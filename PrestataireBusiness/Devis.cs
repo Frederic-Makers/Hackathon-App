@@ -12,6 +12,7 @@ namespace PrestataireBusiness
         public String Email { get; set; }
         public String Exigence { get; set; }
         public String Numero { get; set; }
+        public List<Prestataire> Prestataires { get; set; }
 
         public Devis()
         {
