@@ -5,24 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hackathon_App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="536" Width="800">
-    <DockPanel Margin="0,0,0,1">
-        <Menu DockPanel.Dock="Top" Height="31" Background="#FF111010">
+        Title="Marquises Weiding APP" Height="670" Width="1200" WindowStartupLocation="CenterScreen" MinWidth="640" MinHeight="400" Background="#FF3C484D" WindowState="Maximized" Icon="img/logo.png">
 
-            <MenuItem  Header="_Fichier" Background="#FF0D1100" Foreground="White" Height="32" Width="91" BorderThickness="2,1,1,1" FontSize="16" FontWeight="Bold"  >
-                <MenuItem Header="_Nouveau" Background="#FF232E3C" BorderBrush="{x:Null}" Foreground="White"/>
-                <MenuItem Header="_Imprimer" Background="#FF232E3C"/>
-                <Separator />
-                <MenuItem Header="_Quitter"  Background="#FF232E3C"/>
+    <DockPanel Margin="0,0,0,-4">
+
+
+        <Menu DockPanel.Dock="Top" Height="31" Background="#FF3C484D" Margin="10,1,0,0" Padding="0,1,0,0">
+
+            <MenuItem Header="_Fichier" InputGestureText = "Ctrl + O" Foreground="#FFB7C3C8" Template="{DynamicResource MakersMenuItemStyle}" Margin="0,1,0,11" >
+                <MenuItem  Header="_Nouveau" Foreground="#FFB7C3C8" Background="#FF2F3439" Width="133" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <MenuItem Header="_Imprimer" Foreground="#FFB7C3C8" Background="#FF2F3439"/>
+                <Separator Background="#FF1F292E" Margin="0,1"/>
+                <MenuItem Header="_Quitter" Foreground="#FFB7C3C8" Background="#FF2F3439"/>
             </MenuItem>
-            <MenuItem Header="_Requêtes" Background="Black" Foreground="White" Height="32" Width="93" FontSize="16" FontWeight="Bold" >
-                <MenuItem  Header="Charger la Base de données Prestataires" Background="#FF232E3C"/>
+            <MenuItem Header="_DataBase" InputGestureText = "Ctrl + O" Foreground="#FFB7C3C8" Template="{DynamicResource MakersMenuItemStyle}" Margin="0,1,0,11" >
+                <MenuItem  Header="_Charger Prestataire" Foreground="#FFB7C3C8" Background="#FF2F3439"/>
 
             </MenuItem>
 
         </Menu>
-        <Grid Background="#FF4F787C">
-            <ListView x:Name ="Mygrid" Margin="10,115,10,48">
+
+        <Grid Background="#FF3C484D" Width="1000">
+            <Image Source="/img/logo.png" IsEnabled="False" Height="59" Margin="402,0" VerticalAlignment="Top" RenderTransformOrigin="0.471,0.467" Opacity="0.1" />
+            <Rectangle Fill="#FF546065" Margin="265,75,10,10" Stroke="#FF1F292E" RadiusY="5" RadiusX="5"/>
+
+
+            <ListView x:Name ="Mygrid" Margin="265,112,10,10" Background="#FF5C686D" BorderBrush="#FF1F292E">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -52,12 +60,21 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Rectangle Fill="#FF546065" Margin="10,75,0,10" Stroke="#FF1F292E" RadiusY="4" RadiusX="4" HorizontalAlignment="Left" Width="250"/>
 
-            <Button Content="Ajouter un Prestataire" Margin="10,20,585,0" VerticalAlignment="Top" Height="58" RenderTransformOrigin="0.623,2.471" Background="#FFD8D8D8" FontSize="14" FontWeight="Bold" Click="Button_Click_Add"/>
-            <Button Content="Afficher par catégorie" Margin="0,37,76,0" VerticalAlignment="Top" Height="23" HorizontalAlignment="Right" Width="130" RenderTransformOrigin="0.454,1.379" Background="#FFD6D6D6" FontWeight="Bold"/>
-            <TextBox x:Name="categorieFiltre" Height="25" Margin="0,76,57,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="149" BorderBrush="#FF191818" Background="#FFECECEC"/>
-            <Button Content="Gérer les Devis" Margin="225,20,370,0" VerticalAlignment="Top" Height="58" RenderTransformOrigin="0.623,2.471" Background="#FFD8D8D8" FontSize="14" FontWeight="Bold"/>
+            <Image Source="/img/FiltreLog.png" Height="29" Margin="0,80,17,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="33" />
+            
+            <Button Content="Ajouter" Margin="16,112,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" Click="Button_Click_Add" HorizontalAlignment="Left" Width="236" Foreground="#FFB7C3C8" FontFamily="Calibri" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Padding="1,1,1,3" BorderThickness="1"/>
+            <Button Content="Modifier" Margin="15,146,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
+            <Button Content="Filtrer la catégorie" Margin="0,83,48,0" VerticalAlignment="Top" Height="24" HorizontalAlignment="Right" Width="142" RenderTransformOrigin="0.454,1.379" Background="#FF2F3439" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" FontFamily="Calibri" Foreground="#FFB7C3C8" BorderBrush="#FF444B4F"/>
+            <TextBox x:Name="categorieFiltre" Height="24" Margin="0,83,195,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderBrush="#FF7C7777" Background="#FF636C70" SelectionBrush="#FFEE625A" FontFamily="Calibri" Padding="0,1,19,0" FontSize="16" TextAlignment="Right" HorizontalAlignment="Right" Width="156" Style="{DynamicResource RoundedTextBoxStyle}" Foreground="Black"/>
+            <Button Content="Devis non-traiter" Margin="16,283,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
+            <Button Content="Devis traiter" Margin="15,317,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
+            <Button Content="Charger tous les prestataires" Margin="16,180,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
+            <Label Content="Gestion Prestataire" HorizontalAlignment="Left" Margin="79,83,0,0" VerticalAlignment="Top" Foreground="White"/>
+            <Label Content="Gestion Devis" HorizontalAlignment="Left" Margin="94,252,0,0" VerticalAlignment="Top" Foreground="White"/>
         </Grid>
+
     </DockPanel>
 
 </Window>
