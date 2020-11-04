@@ -86,7 +86,7 @@ namespace PrestataireBusiness
         }
         public static bool UpdatePrestataire(Prestataire p)
         {
-            string sql = "UPDATE Prestataire SET Nom=@nom, Url=@url, Categorie=@categorie, Contact=@contact, Adresse=@adresse, Description=@description, Activation=@activation Prix=@prix "
+            string sql = "UPDATE Prestataire SET Nom=@nom, Url=@url, Categorie=@categorie, Contact=@contact, Adresse=@adresse, Description=@description, Activation=@activation, Prix=@prix "
                 + " Where id=@id ";
 
             using (MySqlCommand cmd = new MySqlCommand(sql, connection))
