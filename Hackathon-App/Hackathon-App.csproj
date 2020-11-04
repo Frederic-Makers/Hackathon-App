@@ -92,6 +92,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UI\AppItems.xaml.cs">
+      <DependentUpon>AppItems.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowAdd.xaml.cs">
       <DependentUpon>WindowAdd.xaml</DependentUpon>
     </Compile>
@@ -113,6 +116,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UI\AppItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
