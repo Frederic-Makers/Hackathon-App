@@ -40,6 +40,9 @@ namespace Hackathon_App
         {
             WindowAdd wa = new WindowAdd(this);
             wa.Show();
+            wa.labelTitre.Content = "Editer le prestataire Id" + Business.p.Id;
+            wa.button2.Visibility = Visibility.Hidden;
+            wa.button1.Content = "Editer et fermer";
 
         }
 
