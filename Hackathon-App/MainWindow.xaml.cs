@@ -211,10 +211,39 @@ namespace Hackathon_App
             MyfilterCategorie.Header = "_Décorateur";
             Filter();
         }
-
         private void Musique_Click(object sender, RoutedEventArgs e)
         {
             MyfilterCategorie.Header = "_Musique";
+            Filter();
+        }
+        private void Danse_Click(object sender, RoutedEventArgs e)
+        {
+            MyfilterCategorie.Header = "_Danse";
+            Filter();
+        }
+        private void Vehicule_Click(object sender, RoutedEventArgs e)
+        {
+            MyfilterCategorie.Header = "_Vehicule";
+            Filter();
+        }
+        private void Traiteur_Click(object sender, RoutedEventArgs e)
+        {
+            MyfilterCategorie.Header = "_Traiteur";
+            Filter();
+        }
+        private void Fleuriste_Click(object sender, RoutedEventArgs e)
+        {
+            MyfilterCategorie.Header = "_Fleuriste";
+            Filter();
+        }
+        private void Agriculteur_Click(object sender, RoutedEventArgs e)
+        {
+            MyfilterCategorie.Header = "_Agriculteur";
+            Filter();
+        }
+        private void Eleveur_Click(object sender, RoutedEventArgs e)
+        {
+            MyfilterCategorie.Header = "_Eleveur";
             Filter();
         }
     }

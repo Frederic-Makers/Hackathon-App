@@ -79,6 +79,12 @@
                     <Separator/>
                     <MenuItem Click="Decorateur_Click" Header="_Décorateur" Foreground="#FFB7C3C8" />
                     <MenuItem Click="Musique_Click" Header="_Musique" Foreground="#FFB7C3C8" />
+                    <MenuItem Click="Danse_Click" Header="_Danse" Foreground="#FFB7C3C8" />
+                    <MenuItem Click="Vehicule_Click" Header="_Vehicule" Foreground="#FFB7C3C8" />
+                    <MenuItem Click="Traiteur_Click" Header="_Traiteur" Foreground="#FFB7C3C8" />
+                    <MenuItem Click="Fleuriste_Click" Header="_Fleuriste" Foreground="#FFB7C3C8" />
+                    <MenuItem Click="Agriculteur_Click" Header="_Agriculteur" Foreground="#FFB7C3C8" />
+                    <MenuItem Click="Eleveur_Click" Header="_Eleveur" Foreground="#FFB7C3C8" />
                 </MenuItem>
             </Menu>
             <Button x:Name="UnfinishedDevis" Click="UnfinishedDevis_Click"  Content="Devis non-traiter" Margin="16,283,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>

@@ -94,9 +94,29 @@ namespace Hackathon_App
         {
             MyfilterCategorie.Header = "_Musique";
         }
+        private void Danse_Click(object sender, RoutedEventArgs e)
+        {
+            MyfilterCategorie.Header = "_Danse";
+        }
         private void Vehicule_Click(object sender, RoutedEventArgs e)
         {
             MyfilterCategorie.Header = "_Vehicule";
+        }
+        private void Traiteur_Click(object sender, RoutedEventArgs e)
+        {
+            MyfilterCategorie.Header = "_Traiteur";
+        }
+        private void Fleuriste_Click(object sender, RoutedEventArgs e)
+        {
+            MyfilterCategorie.Header = "_Fleuriste";
+        }
+        private void Agriculteur_Click(object sender, RoutedEventArgs e)
+        {
+            MyfilterCategorie.Header = "_Agriculteur";
+        }
+        private void Eleveur_Click(object sender, RoutedEventArgs e)
+        {
+            MyfilterCategorie.Header = "_Eleveur";
         }
     }
 }

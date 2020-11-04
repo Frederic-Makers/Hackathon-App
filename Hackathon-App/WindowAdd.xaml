@@ -17,8 +17,13 @@
             <Menu Height="24" VerticalAlignment="Top" HorizontalAlignment="Right" Width="152" Background="{x:Null}" BorderBrush="#FF1F292E" BorderThickness="1" Grid.ColumnSpan="2" Margin="0,80,251,0">
                 <MenuItem x:Name="MyfilterCategorie" Header="_Non-défini" Template="{DynamicResource MakersMenuItemStyle}" Height="24" Width="154" Foreground="#FFB7C3C8" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Calibri" Margin="0" Padding="6,0" Background="#FF3C484D">
                     <MenuItem Click="Decorateur_Click" Header="_Décorateur" Foreground="#FFB7C3C8" Margin="0,10,0,5" />
-                    <MenuItem Click="Vehicule_Click" Header="_Vehicule" Foreground="#FFB7C3C8" />
                     <MenuItem Click="Musique_Click" Header="_Musique" Foreground="#FFB7C3C8" />
+                    <MenuItem Click="Danse_Click" Header="_Danse" Foreground="#FFB7C3C8" />
+                    <MenuItem Click="Vehicule_Click" Header="_Vehicule" Foreground="#FFB7C3C8" />
+                    <MenuItem Click="Traiteur_Click" Header="_Traiteur" Foreground="#FFB7C3C8" />
+                    <MenuItem Click="Fleuriste_Click" Header="_Fleuriste" Foreground="#FFB7C3C8" />
+                    <MenuItem Click="Agriculteur_Click" Header="_Agriculteur" Foreground="#FFB7C3C8" />
+                    <MenuItem Click="Eleveur_Click" Header="_Eleveur" Foreground="#FFB7C3C8" />
                 </MenuItem>
             </Menu>
 
