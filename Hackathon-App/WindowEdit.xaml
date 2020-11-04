@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hackathon_App"
         mc:Ignorable="d"
-        Title="WindowEdit" Height="584.434" Width="460.377">
+        Title="WindowEdit" ResizeMode="NoResize" Height="584.434" Width="460.377">
     <DockPanel>
         <Menu DockPanel.Dock="Top" Height="30" Background="Black">
             <MenuItem  Header="_Fichier" Margin="0,5,0,0" Background="Black" Foreground="White" >
                 <MenuItem Header="_Effacer" Background="#FF232E3C" BorderBrush="{x:Null}" Foreground="White"/>
                 <Separator />
-                <MenuItem Header="_Quitter" Background="#FF232E3C"/>
+                <MenuItem Header="_Fermer" Background="#FF232E3C"/>
             </MenuItem>
 
         </Menu>

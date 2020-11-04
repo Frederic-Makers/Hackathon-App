@@ -13,6 +13,10 @@ namespace PrestataireBusiness
         public String Exigence { get; set; }
         public String Numero { get; set; }
 
+        public Devis()
+        {
+
+        }
         public Devis(int id, String nom, String prenom, String email, String exigence, String numero)
         {
             this.Id = id;

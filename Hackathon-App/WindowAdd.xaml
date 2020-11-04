@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hackathon_App"
         mc:Ignorable="d"
-        Title="WindowAjout" Height="577.661" Width="463.207">
+        Title="WindowAjout" Height="577.661" Width="463.207" ResizeMode="NoResize">
     <DockPanel>
         <Menu DockPanel.Dock="Top" Height="30" Background="Black">
             <MenuItem  Header="_Fichier" Margin="0,5,0,0" Background="Black" Foreground="White" >
                 <MenuItem Header="_Effacer" Background="#FF232E3C" BorderBrush="{x:Null}" Foreground="White"/>
                 <Separator />
-                <MenuItem Header="_Quitter" Background="#FF232E3C"/>
+                <MenuItem Header="_Fermer" Background="#FF232E3C"/>
             </MenuItem>
 
         </Menu>
@@ -22,7 +22,7 @@
             </Grid.ColumnDefinitions>
             <Label Content="AJOUTER UN PRESTATAIRE" HorizontalAlignment="Left" Height="52" Margin="119,25,0,0" VerticalAlignment="Top" Width="212" FontWeight="Bold" Grid.ColumnSpan="2" FontSize="16"/>
             <Label Content="Nom" HorizontalAlignment="Left" Height="25" Margin="49,95,0,0" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="2"/>
-            <Label Content="Url" HorizontalAlignment="Left" Height="30" Margin="49,125,0,0" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="2"/>
+            <Label Content="Url image" HorizontalAlignment="Left" Height="30" Margin="49,125,0,0" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="2"/>
             <Label Content="Catégorie" HorizontalAlignment="Left" Height="25" Margin="49,155,0,0" VerticalAlignment="Top" Width="140" Grid.ColumnSpan="2"/>
             <Label Content="Contact" HorizontalAlignment="Left" Height="25" Margin="49,185,0,0" VerticalAlignment="Top" Width="140" Grid.ColumnSpan="2"/>
             <Label Content="Adresse" HorizontalAlignment="Left" Height="25" Margin="49,215,0,0" VerticalAlignment="Top" Width="140" Grid.ColumnSpan="2"/>
