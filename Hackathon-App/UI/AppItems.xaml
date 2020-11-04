@@ -7,31 +7,29 @@
              mc:Ignorable="d" d:DesignWidth="800" Height="446">
     <Grid Background="#FF2D2C32">
         <Grid.RowDefinitions>
-            <RowDefinition Height="325*"/>
-            <RowDefinition Height="121*"/>
+            <RowDefinition Height="145*"/>
+            <RowDefinition Height="78*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="713*" />
         </Grid.ColumnDefinitions>
-        <Label VerticalAlignment="Top" Width="194" Height="49" FontFamily="Tahoma" Content="{Binding Nom}" FontSize="24" Margin="10,138,596,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="5" BorderThickness="1" Background="#FF81E8FF"/>
-        <Label HorizontalAlignment="Left" Margin="581,52,0,0" VerticalAlignment="Top" Width="209" Height="30" Content="{Binding Email}" FontWeight="Bold" Background="#FF81E8FF"/>
-        <TextBlock HorizontalAlignment="Left" Margin="348,52,0,0" VerticalAlignment="Top" Width="134" Height="30" Text="{Binding Numero}" TextWrapping="Wrap" FontWeight="Bold" Background="#FF81E8FF"/>
-        <TextBlock HorizontalAlignment="Left" Margin="304,96,0,0" VerticalAlignment="Top" Width="178" Height="156" Text="{Binding Exigence}" TextWrapping="Wrap" FontWeight="Bold" Background="#FF81E8FF"/>
-        <Label HorizontalAlignment="Left" Margin="304,273,0,0" VerticalAlignment="Top" Width="178" Height="30" Content="{Binding Prix}" FontWeight="Bold" Background="#FF81E8FF"/>
-        <Label HorizontalAlignment="Left" Margin="221,52,0,0" VerticalAlignment="Top" Width="115" Height="30" Content="Numéros portable :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF7E8E8"/>
-        <Label HorizontalAlignment="Left" Margin="511,52,0,0" VerticalAlignment="Top" Width="65" Height="30" Content="Email :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-        <Label HorizontalAlignment="Left" Margin="221,136,0,0" VerticalAlignment="Top" Width="78" Height="30" Content="Exigences :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
-        <Label HorizontalAlignment="Left" Margin="221,273,0,0" VerticalAlignment="Top" Width="70" Height="30" Content="Prix Total :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-        <Label VerticalAlignment="Top" Width="194" Height="46" FontFamily="Tahoma" Content="{Binding Prenom}" FontSize="24" Margin="9,228,597,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="5" BorderThickness="1" Background="#FF81E8FF"/>
-        <Label HorizontalAlignment="Left" Margin="85,61,0,0" VerticalAlignment="Top" Width="119" Height="30" Content="{Binding Id}" FontWeight="Bold" Background="#FF34A67D"/>
-        <Label HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="65" Height="30" Content="N° ID :" FontWeight="Bold" FontSize="14" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-        <Label HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Width="193" Height="47" Content="DEVIS" FontWeight="Bold" FontSize="24" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-        <ListBox x:Name="MyCalculSommeDevis"  HorizontalAlignment="Left" Margin="581,96,0,0" VerticalAlignment="Top" Width="209" Height="107" ItemsSource="{Binding Prestataires}" FontWeight="Bold" Background="#FF81E8FF"/>
-        <Label HorizontalAlignment="Left" Margin="498,123,0,0" VerticalAlignment="Top" Width="78" Height="53" Content="Prestataires&#xD;&#xA;choisi :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
-        <ListBox x:Name="MyListPrestaIndispo"  HorizontalAlignment="Left" Margin="581,217,0,0" VerticalAlignment="Top" Width="209" Height="86" ItemsSource="{Binding PrestatairesIndisponibles}" FontWeight="Bold" Background="#FF81E8FF"/>
-        <Label HorizontalAlignment="Left" Margin="492,228,0,0" VerticalAlignment="Top" Width="84" Height="53" Content="Prestataires&#xA;indisponible :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
-        <Label HorizontalAlignment="Left" Margin="10,109,0,0" VerticalAlignment="Top" Width="78" Height="24" Content="Nom :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
-        <Label HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" Width="78" Height="23" Content="Prénom :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
+        <Image Height="176" VerticalAlignment="Top" Grid.Column="0" Source="{Binding Url}" Margin="10,77,0,0" HorizontalAlignment="Left" Width="193"/>
+        <Label VerticalAlignment="Top" Width="194" Height="42" FontFamily="Tahoma" Content="{Binding Nom}" FontSize="18" Margin="10,15,596,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="Black" Padding="5,8,5,5" BorderThickness="1" Background="#FF8BC9E6" FontWeight="Bold" Foreground="Black" SnapsToDevicePixels="True"/>
+        <Label HorizontalAlignment="Left" Margin="524,57,0,0" VerticalAlignment="Top" Width="232" Height="30" Content="{Binding Categorie}" FontWeight="Bold" Background="#FF8BC9E6" FontSize="14"/>
+        <Label HorizontalAlignment="Left" Margin="304,98,0,0" VerticalAlignment="Top" Width="452" Height="30" Content="{Binding Adresse}" FontWeight="Bold" Background="#FF8BC9E6"/>
+        <TextBlock HorizontalAlignment="Left" Margin="304,57,0,0" VerticalAlignment="Top" Width="119" Height="30" TextWrapping="Wrap" Background="#FF8BC9E6" FontSize="14" FontWeight="Bold" Text="{Binding Contact}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="304,138,0,0" VerticalAlignment="Top" Width="452" Height="93" TextWrapping="Wrap" FontWeight="Bold" Background="#FF8BC9E6" Text="{Binding Description}"/>
+        <Label HorizontalAlignment="Left" Margin="304,242,0,0" VerticalAlignment="Top" Width="160" Height="30" Content="{Binding Prix}" FontWeight="Bold" Background="#FF8BC9E6" FontSize="14"/>
+        <Label HorizontalAlignment="Left" Margin="216,57,0,0" VerticalAlignment="Top" Width="74" Height="30" Content="Contact :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF7E8E8"/>
+        <Label HorizontalAlignment="Left" Margin="524,242,0,0" VerticalAlignment="Top" Width="88" Height="30" Content="Activation :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
+        <Label HorizontalAlignment="Left" Margin="441,57,0,0" VerticalAlignment="Top" Width="74" Height="30" Content="Catégories :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
+        <Label HorizontalAlignment="Left" Margin="216,99,0,0" VerticalAlignment="Top" Width="74" Height="30" Content="Adresse :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
+        <Label HorizontalAlignment="Left" Margin="216,156,0,0" VerticalAlignment="Top" Width="83" Height="30" Content="Description :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
+        <Label HorizontalAlignment="Left" Margin="216,240,0,0" VerticalAlignment="Top" Width="83" Height="30" Content="Prix :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="612,248,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" Height="15" Width="53" IsChecked="{Binding Activation}"/>
+        <Label HorizontalAlignment="Left" Margin="247,9,0,0" VerticalAlignment="Top" Width="167" Height="43" Content="PRESTATAIRE" FontSize="22" Foreground="#FFF7E8E8" FontWeight="Bold" FontStyle="Italic"/>
+        <Label HorizontalAlignment="Left" Margin="538,13,0,0" VerticalAlignment="Top" Width="74" Height="30" Content="N° ID :" FontWeight="Bold" FontStyle="Italic" Foreground="#FFF7E8E8" FontSize="18"/>
+        <Label HorizontalAlignment="Left" Margin="623,15,0,0" VerticalAlignment="Top" Width="74" Height="30" Content="{Binding Id}" FontWeight="Bold" Background="#FF8BC9E6" FontSize="16"/>
 
     </Grid>
 
