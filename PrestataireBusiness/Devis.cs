@@ -11,14 +11,14 @@ namespace PrestataireBusiness
         public String Prenom { get; set; }
         public String Email { get; set; }
         public String Exigence { get; set; }
-        public String Numero { get; set; }
+        public int Numero { get; set; }
         public List<Prestataire> Prestataires { get; set; }
 
         public Devis()
         {
 
         }
-        public Devis(int id, String nom, String prenom, String email, String exigence, String numero)
+        public Devis(int id, String nom, String prenom, String email, String exigence, int numero)
         {
             this.Id = id;
             this.Nom = nom;
