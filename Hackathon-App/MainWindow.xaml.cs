@@ -33,7 +33,8 @@ namespace Hackathon_App
         private void ADDPresta_Click(object sender, RoutedEventArgs e)
         {
             WindowAdd wa = new WindowAdd(this);
-            wa.Show();            
+            wa.Show();
+            wa.Title = "Ajouter un Prestataire";
         }
 
         private void EDITPresta_Click(object sender, RoutedEventArgs e)
@@ -43,6 +44,14 @@ namespace Hackathon_App
             wa.labelTitre.Content = "Editer le prestataire Id" + Business.p.Id;
             wa.button2.Visibility = Visibility.Hidden;
             wa.button1.Content = "Editer et fermer";
+            wa.Title = "Editer Prestataire";
+            wa.Nom.Text = Business.p.Nom;
+            wa.Url.Text = Business.p.Url;
+            wa.Categorie.Text = Business.p.Categorie;
+            wa.Contact.Text = Business.p.Contact;
+            wa.Adresse.Text = Business.p.Adresse;
+            wa.Description.Text = Business.p.Description;
+            wa.Activation.IsChecked = Business.p.Activation;
 
         }
 
@@ -134,7 +143,7 @@ namespace Hackathon_App
         {
             Prestataire p = (Prestataire)this.Mygrid.SelectedItem;
             EDITPresta.IsEnabled = true;
-            Business.p.Id = p.Id;
+            Business.p = p;
         }
     }
 }
