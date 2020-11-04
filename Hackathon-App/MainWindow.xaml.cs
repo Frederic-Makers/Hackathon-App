@@ -30,5 +30,55 @@ namespace Hackathon_App
             WindowAjout wa = new WindowAjout(this);
             wa.Show();
         }
+
+        private void ADDPresta_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EDITPresta_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LOADPresta_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void FILTERPresta_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UnfinishedDevis_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void finishedDevis_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NEW_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PRINT_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EXIT_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LOADPrestaMenu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
