@@ -15,14 +15,14 @@ namespace PrestataireBusiness
         public String Adresse { get; set; }
         public String Description { get; set; }
         public Boolean Activation { get; set; }
-        public int Prix { get; set; }
+        public String Prix { get; set; }
 
         public Prestataire()
         {
 
         }
         public Prestataire(int id, String nom, String url, String categorie, String contact, String adresse,
-                       String description, Boolean activation, int prix)
+                       String description, Boolean activation, String prix)
         {
             this.Id = id;
             this.Nom = nom;

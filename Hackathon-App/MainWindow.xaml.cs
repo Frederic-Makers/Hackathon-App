@@ -34,12 +34,14 @@ namespace Hackathon_App
         {
             WindowAdd wa = new WindowAdd(this);
             wa.Show();
+            wa.modeEdit = false;
             wa.Title = "Ajouter un Prestataire";
         }
 
         private void EDITPresta_Click(object sender, RoutedEventArgs e)
         {
             WindowAdd wa = new WindowAdd(this);
+            wa.modeEdit = true;
             wa.Show();
             wa.labelTitre.Content = "Editer le prestataire Id" + Business.p.Id;
             wa.button2.Visibility = Visibility.Hidden;
