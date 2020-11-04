@@ -38,7 +38,7 @@ namespace PrestataireBusiness
                         String Adresse = dbReader.GetString(5);
                         String Description = dbReader.GetString(6);
                         Boolean Activation = dbReader.GetBoolean(7);
-                        int Prix = dbReader.GetInt32(8);
+                        String Prix = dbReader.GetString(8);
 
                         // attente de la création de la class business
                         Business.Prestataires.Add(new Prestataire(Id, Nom, Url, Categorie, Contact, Adresse, Description, Activation, Prix));
@@ -86,7 +86,7 @@ namespace PrestataireBusiness
         }
         public static bool UpdatePrestataire(Prestataire p)
         {
-            string sql = "UPDATE Prestataire SET Nom=@nom, Url=@url, Categorie=@categorie, Contact=@contact, Adresse=@adresse, Description=@description, Prix=@prix "
+            string sql = "UPDATE Prestataire SET Nom=@nom, Url=@url, Categorie=@categorie, Contact=@contact, Adresse=@adresse, Description=@description, Activation=@activation Prix=@prix "
                 + " Where id=@id ";
 
             using (MySqlCommand cmd = new MySqlCommand(sql, connection))
@@ -100,6 +100,7 @@ namespace PrestataireBusiness
                 cmd.Parameters.AddWithValue("@contact", p.Contact);
                 cmd.Parameters.AddWithValue("@adresse", p.Adresse);
                 cmd.Parameters.AddWithValue("@description", p.Description);
+                cmd.Parameters.AddWithValue("@activation", p.Activation);
                 cmd.Parameters.AddWithValue("@prix", p.Prix);
 
                 bool result = cmd.ExecuteNonQuery() == 1;
