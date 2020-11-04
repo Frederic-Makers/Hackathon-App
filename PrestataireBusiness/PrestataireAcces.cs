@@ -80,7 +80,7 @@ namespace PrestataireBusiness
                 cmd.Parameters.AddWithValue("@description", p.Description);
                 cmd.Parameters.AddWithValue("@activation", p.Activation);
                 cmd.Parameters.AddWithValue("@prix", p.Prix);
-                
+
                 bool result = cmd.ExecuteNonQuery() == 1;
                 cmd.Connection.Close();
                 return result;
@@ -110,5 +110,5 @@ namespace PrestataireBusiness
 
             }
         }
-    }
+    } 
 }
