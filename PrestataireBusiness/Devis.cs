@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PrestataireBusiness
 {
-    class Devis
+    public class Devis
     {
         public int Id { get; set; }
         public String Nom { get; set; }
