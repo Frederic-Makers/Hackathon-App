@@ -17,7 +17,7 @@ namespace PrestataireBusiness
 
         static PrestataireAcces()
         {
-            String connString = "Server=remotemysql.com;Database=qgO0M364Or;userid=sgroot;Pwd=7Hyomgetg3";
+            String connString = "Server=remotemysql.com/phpmyadmin/sql.php?server=1&db=qgO0M364Or&table=Prestataire&pos=0;Database=qgO0M364Or;userid=sgroot;Pwd=7Hyomgetg3";
             connection = new MySqlConnection(connString);
         }
         public static void GetPrestataire()
