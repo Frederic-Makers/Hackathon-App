@@ -38,7 +38,7 @@ namespace Hackathon_App
                 Prestataire p = Business.p;               
                 p.Nom = Nom.Text;
                 p.Url = Url.Text;
-                p.Categorie = Categorie.Text;
+                p.Categorie = MyfilterCategorie.Header.ToString().Replace("_", "");
                 p.Contact = Contact.Text;
                 p.Adresse = Adresse.Text;
                 p.Description = Description.Text;
@@ -47,7 +47,8 @@ namespace Hackathon_App
             
                 if (PrestataireAcces.UpdatePrestataire(p))
                 {
-                    MessageBox.Show("Le prestataire Id: " + p.Id + " a bien était mis à jour");
+                    MessageBox.Show("Le prestataire Id:" + p.Id + ", nommé " + p.Nom + " a bien était mis à jour");
+                    mw.LOADbdd();
                 }
                 else
                 {
@@ -57,10 +58,11 @@ namespace Hackathon_App
             }
             else
             {
-                Prestataire p = new Prestataire(0, Nom.Text, Url.Text, Categorie.Text, Contact.Text, Adresse.Text, Description.Text, Activation.IsChecked.Value, Prix.Text);            ;
+                Prestataire p = new Prestataire(0, Nom.Text, Url.Text, MyfilterCategorie.Header.ToString().Replace("_", ""), Contact.Text, Adresse.Text, Description.Text, Activation.IsChecked.Value, Prix.Text);
                 if (PrestataireAcces.InsertPrestataire(p))
                 {
-                    MessageBox.Show(" Les infos client ont bien été envoyés ");
+                    MessageBox.Show(" Prestataire n°Id: " + p.Id + " nommé " + p.Nom + " a bien était ajouté à la base de donnée");
+                    mw.LOADbdd();
                 }
                 else
                 {
@@ -71,10 +73,11 @@ namespace Hackathon_App
 
         private void AddClosePresta_Click(object sender, RoutedEventArgs e)
         {
-            Prestataire p = new Prestataire(0, Nom.Text, Url.Text, Categorie.Text, Contact.Text, Adresse.Text, Description.Text, Activation.IsChecked.Value, Prix.Text); ;
+            Prestataire p = new Prestataire(0, Nom.Text, Url.Text, MyfilterCategorie.Header.ToString().Replace("_",""), Contact.Text, Adresse.Text, Description.Text, Activation.IsChecked.Value, Prix.Text);
             if (PrestataireAcces.InsertPrestataire(p))
             {
                 MessageBox.Show(" Les infos client ont bien été envoyés ");
+                mw.LOADbdd();
             }
             else
             {
@@ -83,7 +86,17 @@ namespace Hackathon_App
             this.Close();
         }
 
-
-        
+        private void Decorateur_Click(object sender, RoutedEventArgs e)
+        {
+            MyfilterCategorie.Header = "_Décorateur";
+        }
+        private void Musique_Click(object sender, RoutedEventArgs e)
+        {
+            MyfilterCategorie.Header = "_Musique";
+        }
+        private void Vehicule_Click(object sender, RoutedEventArgs e)
+        {
+            MyfilterCategorie.Header = "_Vehicule";
+        }
     }
 }
