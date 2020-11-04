@@ -7,29 +7,30 @@
              mc:Ignorable="d" d:DesignWidth="800" Height="446">
     <Grid Background="#FF2D2C32">
         <Grid.RowDefinitions>
-            <RowDefinition Height="145*"/>
-            <RowDefinition Height="78*"/>
+            <RowDefinition Height="303*"/>
+            <RowDefinition Height="143*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="713*" />
         </Grid.ColumnDefinitions>
-        <Image Height="176" VerticalAlignment="Top" Grid.Column="0" Source="{Binding Url}" Margin="10,77,0,0" HorizontalAlignment="Left" Width="193"/>
-        <Label VerticalAlignment="Top" Width="194" Height="42" FontFamily="Tahoma" Content="{Binding Nom}" FontSize="18" Margin="10,15,596,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="Black" Padding="5,8,5,5" BorderThickness="1" Background="#FF8BC9E6" FontWeight="Bold" Foreground="Black" SnapsToDevicePixels="True"/>
-        <Label HorizontalAlignment="Left" Margin="524,57,0,0" VerticalAlignment="Top" Width="232" Height="30" Content="{Binding Categorie}" FontWeight="Bold" Background="#FF8BC9E6" FontSize="14"/>
-        <Label HorizontalAlignment="Left" Margin="304,98,0,0" VerticalAlignment="Top" Width="452" Height="30" Content="{Binding Adresse}" FontWeight="Bold" Background="#FF8BC9E6"/>
-        <TextBlock HorizontalAlignment="Left" Margin="304,57,0,0" VerticalAlignment="Top" Width="119" Height="30" TextWrapping="Wrap" Background="#FF8BC9E6" FontSize="14" FontWeight="Bold" Text="{Binding Contact}"/>
-        <TextBlock HorizontalAlignment="Left" Margin="304,138,0,0" VerticalAlignment="Top" Width="452" Height="93" TextWrapping="Wrap" FontWeight="Bold" Background="#FF8BC9E6" Text="{Binding Description}"/>
-        <Label HorizontalAlignment="Left" Margin="304,242,0,0" VerticalAlignment="Top" Width="160" Height="30" Content="{Binding Prix}" FontWeight="Bold" Background="#FF8BC9E6" FontSize="14"/>
-        <Label HorizontalAlignment="Left" Margin="216,57,0,0" VerticalAlignment="Top" Width="74" Height="30" Content="Contact :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF7E8E8"/>
+        <Image Height="176" VerticalAlignment="Top" Grid.Column="0" Source="{Binding Url}" Margin="25,77,0,0" HorizontalAlignment="Left" Width="193"/>
+        <Label VerticalAlignment="Top" Width="194" Height="42" FontFamily="Tahoma" Content="{Binding Nom}" FontSize="18" Margin="25,15,581,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="Black" Padding="5,8,5,5" BorderThickness="1" Background="#FF8BC9E6" FontWeight="Bold" Foreground="Black" SnapsToDevicePixels="True"/>
+        <Label HorizontalAlignment="Left" Margin="547,57,0,0" VerticalAlignment="Top" Width="232" Height="30" Content="{Binding Categorie}" FontWeight="Bold" Background="#FF8BC9E6" FontSize="14"/>
+        <Label HorizontalAlignment="Left" Margin="327,98,0,0" VerticalAlignment="Top" Width="452" Height="30" Content="{Binding Adresse}" FontWeight="Bold" Background="#FF8BC9E6"/>
+        <TextBlock HorizontalAlignment="Left" Margin="327,57,0,0" VerticalAlignment="Top" Width="119" Height="30" TextWrapping="Wrap" Background="#FF8BC9E6" FontSize="14" FontWeight="Bold" Text="{Binding Contact}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="327,140,0,0" VerticalAlignment="Top" Width="452" Height="92" TextWrapping="Wrap" FontWeight="Bold" Background="#FF8BC9E6" Text="{Binding Description}"/>
+        <Label HorizontalAlignment="Left" Margin="327,242,0,0" VerticalAlignment="Top" Width="160" Height="30" Content="{Binding Prix}" FontWeight="Bold" Background="#FF8BC9E6" FontSize="14"/>
+        <Label HorizontalAlignment="Left" Margin="243,57,0,0" VerticalAlignment="Top" Width="74" Height="30" Content="Contact :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF7E8E8"/>
         <Label HorizontalAlignment="Left" Margin="524,242,0,0" VerticalAlignment="Top" Width="88" Height="30" Content="Activation :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-        <Label HorizontalAlignment="Left" Margin="441,57,0,0" VerticalAlignment="Top" Width="74" Height="30" Content="Catégories :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-        <Label HorizontalAlignment="Left" Margin="216,99,0,0" VerticalAlignment="Top" Width="74" Height="30" Content="Adresse :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-        <Label HorizontalAlignment="Left" Margin="216,156,0,0" VerticalAlignment="Top" Width="83" Height="30" Content="Description :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
-        <Label HorizontalAlignment="Left" Margin="216,240,0,0" VerticalAlignment="Top" Width="83" Height="30" Content="Prix :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
+        <Label HorizontalAlignment="Left" Margin="468,57,0,0" VerticalAlignment="Top" Width="74" Height="30" Content="Catégories :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
+        <Label HorizontalAlignment="Left" Margin="243,98,0,0" VerticalAlignment="Top" Width="74" Height="30" Content="Adresse :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
+        <Label HorizontalAlignment="Left" Margin="243,154,0,0" VerticalAlignment="Top" Width="83" Height="30" Content="Description :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
+        <Label HorizontalAlignment="Left" Margin="243,242,0,0" VerticalAlignment="Top" Width="50" Height="30" Content="Prix :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
         <CheckBox Content="" HorizontalAlignment="Left" Margin="612,248,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" Height="15" Width="53" IsChecked="{Binding Activation}"/>
-        <Label HorizontalAlignment="Left" Margin="247,9,0,0" VerticalAlignment="Top" Width="167" Height="43" Content="PRESTATAIRE" FontSize="22" Foreground="#FFF7E8E8" FontWeight="Bold" FontStyle="Italic"/>
+        <Label HorizontalAlignment="Left" Margin="274,9,0,0" VerticalAlignment="Top" Width="167" Height="43" Content="PRESTATAIRE" FontSize="22" Foreground="#FFF7E8E8" FontWeight="Bold" FontStyle="Italic"/>
         <Label HorizontalAlignment="Left" Margin="538,13,0,0" VerticalAlignment="Top" Width="74" Height="30" Content="N° ID :" FontWeight="Bold" FontStyle="Italic" Foreground="#FFF7E8E8" FontSize="18"/>
         <Label HorizontalAlignment="Left" Margin="623,15,0,0" VerticalAlignment="Top" Width="74" Height="30" Content="{Binding Id}" FontWeight="Bold" Background="#FF8BC9E6" FontSize="16"/>
+        <Rectangle HorizontalAlignment="Left" Height="293" RadiusY="5" RadiusX="5" VerticalAlignment="Top" Width="800" Stroke="#FF252121"/>
 
     </Grid>
 
