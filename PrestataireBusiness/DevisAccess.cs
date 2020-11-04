@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.OData.Edm;
+using MySql.Data.MySqlClient;
 using PrestataireBusiness;
 using System;
 using System.Collections.Generic;
@@ -33,11 +34,12 @@ namespace DevisBusiness
                         int Id = dbReader.GetInt32(0);
                         string Nom = dbReader.GetString(1);
                         string Prenom = dbReader.GetString(2);
-                        string Email = dbReader.GetString(3);
-                        string Exigence = dbReader.GetString(4);
-                        int Numero = dbReader.GetInt32(5);
+                        DateTime Date = dbReader.GetDateTime(3);
+                        string Email = dbReader.GetString(4);
+                        string Exigence = dbReader.GetString(5);
+                        int Numero = dbReader.GetInt32(6);
                    
-                        Business.Devis.Add(new Devis(Id, Nom, Prenom, Email, Exigence, Numero));
+                        Business.Devis.Add(new Devis(Id, Nom, Prenom, Date, Email, Exigence, Numero));
                     }
                 }
                 command.Connection.Close();
@@ -45,14 +47,15 @@ namespace DevisBusiness
         }
         public static bool InsertDevis(Devis d)
         {
-            string sql = "INSERT INTO Devis(Id, Nom, Prenom, Email, Exigence, Numero) " +
-                         "VALUE (@id, @nom, @prenom, @email, @exigence, @numero)";
+            string sql = "INSERT INTO Devis(Id, Nom, Prenom, Date, Email, Exigence, Numero) " +
+                         "VALUE (@id, @nom, @prenom, @date, @email, @exigence, @numero)";
             using (MySqlCommand cmd = new MySqlCommand(sql, connection))
             {
                 cmd.Connection.Open();
                 cmd.Parameters.AddWithValue("@id", null);
                 cmd.Parameters.AddWithValue("@nom", d.Nom);
                 cmd.Parameters.AddWithValue("@prenom", d.Prenom);
+                cmd.Parameters.AddWithValue("@date", d.Date);
                 cmd.Parameters.AddWithValue("@email", d.Email);
                 cmd.Parameters.AddWithValue("@exigence", d.Exigence);
                 cmd.Parameters.AddWithValue("@numero", d.Numero);  
@@ -64,7 +67,7 @@ namespace DevisBusiness
         }
         public static bool UpdateDevis(Devis d)
         {
-            string sql = "UPDATE Devis SET Nom=@nom, Prenom=@prenom, Email=@email, Exigence=@exigence, Numero=@numero" + 
+            string sql = "UPDATE Devis SET Nom=@nom, Prenom=@prenom, Date=@date, Email=@email, Exigence=@exigence, Numero=@numero" + 
                          "Where id=@id";
             using (MySqlCommand cmd = new MySqlCommand(sql, connection))
             {
@@ -73,6 +76,7 @@ namespace DevisBusiness
                 cmd.Parameters.AddWithValue("@id", d.Id);
                 cmd.Parameters.AddWithValue("@nom", d.Nom);
                 cmd.Parameters.AddWithValue("@prenom", d.Prenom);
+                cmd.Parameters.AddWithValue("@date", d.Date);
                 cmd.Parameters.AddWithValue("@email", d.Email);
                 cmd.Parameters.AddWithValue("@exigence", d.Exigence);
                 cmd.Parameters.AddWithValue("@numero", d.Numero);

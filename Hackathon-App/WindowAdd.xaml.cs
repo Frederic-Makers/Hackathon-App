@@ -39,7 +39,7 @@ namespace Hackathon_App
                 p.Nom = Nom.Text;
                 p.Url = Url.Text;
                 p.Categorie = MyfilterCategorie.Header.ToString().Replace("_", "");
-                p.Contact = Contact.Text;
+                p.Contact = Contact.Text.Replace(".","");
                 p.Adresse = Adresse.Text;
                 p.Description = Description.Text;
                 p.Activation = Activation.IsChecked.Value;
@@ -58,7 +58,7 @@ namespace Hackathon_App
             }
             else
             {
-                Prestataire p = new Prestataire(0, Nom.Text, Url.Text, MyfilterCategorie.Header.ToString().Replace("_", ""), Contact.Text, Adresse.Text, Description.Text, Activation.IsChecked.Value, Prix.Text);
+                Prestataire p = new Prestataire(0, Nom.Text, Url.Text, MyfilterCategorie.Header.ToString().Replace("_", ""), Contact.Text.Replace(".", ""), Adresse.Text, Description.Text, Activation.IsChecked.Value, Prix.Text);
                 if (PrestataireAcces.InsertPrestataire(p))
                 {
                     MessageBox.Show(" Prestataire n°Id: " + p.Id + " nommé " + p.Nom + " a bien était ajouté à la base de donnée");
@@ -73,7 +73,7 @@ namespace Hackathon_App
 
         private void AddClosePresta_Click(object sender, RoutedEventArgs e)
         {
-            Prestataire p = new Prestataire(0, Nom.Text, Url.Text, MyfilterCategorie.Header.ToString().Replace("_",""), Contact.Text, Adresse.Text, Description.Text, Activation.IsChecked.Value, Prix.Text);
+            Prestataire p = new Prestataire(0, Nom.Text, Url.Text, MyfilterCategorie.Header.ToString().Replace("_",""), Contact.Text.Replace(".", ""), Adresse.Text, Description.Text, Activation.IsChecked.Value, Prix.Text);
             if (PrestataireAcces.InsertPrestataire(p))
             {
                 MessageBox.Show(" Les infos client ont bien été envoyés ");
