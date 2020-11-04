@@ -38,8 +38,7 @@ namespace Hackathon_App
 
         private void EDITPresta_Click(object sender, RoutedEventArgs e)
         {
-            WindowEdit we = new WindowEdit(this);
-            we.Show();
+            
         }
 
         private void LOADPresta_Click(object sender, RoutedEventArgs e)

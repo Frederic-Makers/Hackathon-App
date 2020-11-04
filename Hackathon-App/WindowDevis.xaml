@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="WindowDevis" Height="450" Width="697.951">
     <Grid Margin="0,0,2,0">
-        <ListView x:Name ="Mygrid" Margin="143,40,33,46" Background="#FF5C686D" BorderBrush="#FF1F292E" SelectionChanged="Mygrid_SelectionChanged">
+        <ListView x:Name ="Mygrid" Margin="143,40,33,46" Background="#FF5C686D" BorderBrush="#FF1F292E" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>

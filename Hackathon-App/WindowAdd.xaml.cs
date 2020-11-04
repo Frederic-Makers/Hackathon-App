@@ -26,9 +26,6 @@ namespace Hackathon_App
 
             this.mw = mw;
 
-            labelTitre
-            button1.
-
         }
 
         private void AddPresta_Click(object sender, RoutedEventArgs e)
