@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace Hackathon_App
 {
     /// <summary>
-    /// Interaction logic for WindowAjout.xaml
+    /// Interaction logic for WindowDevis.xaml
     /// </summary>
-    public partial class WindowAdd : Window
+    public partial class WindowDevis : Window
     {
-        public MainWindow mw;
-        public WindowAdd(MainWindow mw)
+        public WindowDevis()
         {
             InitializeComponent();
-
-            this.mw = mw;
-
         }
-
     }
 }

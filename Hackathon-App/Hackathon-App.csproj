@@ -95,6 +95,9 @@
     <Compile Include="WindowAdd.xaml.cs">
       <DependentUpon>WindowAdd.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowDevis.xaml.cs">
+      <DependentUpon>WindowDevis.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowEdit.xaml.cs">
       <DependentUpon>WindowEdit.xaml</DependentUpon>
     </Compile>
@@ -111,6 +114,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="WindowAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowDevis.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
