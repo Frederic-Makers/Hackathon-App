@@ -38,7 +38,9 @@ namespace Hackathon_App
 
         private void EDITPresta_Click(object sender, RoutedEventArgs e)
         {
-            
+            WindowAdd wa = new WindowAdd(this);
+            wa.Show();
+
         }
 
         private void LOADPresta_Click(object sender, RoutedEventArgs e)
@@ -123,6 +125,13 @@ namespace Hackathon_App
         private void LOADPrestaMenu_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Mygrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Prestataire p = (Prestataire)this.Mygrid.SelectedItem;
+            EDITPresta.IsEnabled = true;
+            Business.p.Id = p.Id;
         }
     }
 }

@@ -30,7 +30,7 @@
             <Rectangle Fill="#FF546065" Margin="265,75,10,10" Stroke="#FF1F292E" RadiusY="5" RadiusX="5"/>
 
 
-            <ListView x:Name ="Mygrid" Margin="265,112,10,10" Background="#FF5C686D" BorderBrush="#FF1F292E">
+            <ListView x:Name ="Mygrid"  Margin="265,112,10,10" Background="#FF5C686D" BorderBrush="#FF1F292E" SelectionChanged="Mygrid_SelectionChanged">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -56,9 +56,10 @@
                             <Label HorizontalAlignment="Left" Margin="203,112,0,0" VerticalAlignment="Top" Width="115" Height="30" Content="Mode prépation :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
                             <Label HorizontalAlignment="Left" Margin="203,191,0,0" VerticalAlignment="Top" Width="83" Height="30" Content="Origine :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
                             <Rectangle HorizontalAlignment="Left" Height="240" Stroke="#FFCB6600" VerticalAlignment="Top" Width="713" StrokeThickness="3" Opacity="0.7"/>
-                        
+
                         </Grid>
                     </DataTemplate>
+                    
                 </ListView.ItemTemplate>
             </ListView>
             <Rectangle Fill="#FF546065" Margin="10,75,0,10" Stroke="#FF1F292E" RadiusY="4" RadiusX="4" HorizontalAlignment="Left" Width="250"/>
