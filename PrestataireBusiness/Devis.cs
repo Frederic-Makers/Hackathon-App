@@ -14,6 +14,8 @@ namespace PrestataireBusiness
         public int Numero { get; set; }
         public List<Prestataire> Prestataires { get; set; }
 
+        public List<Prestataire> PrestatairesIndisponibles { get; set; }
+
         public Devis()
         {
 

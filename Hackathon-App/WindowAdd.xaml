@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hackathon_App"
         mc:Ignorable="d"
-        Title="WindowAjout" Height="577.661" Width="463.207" ResizeMode="NoResize">
+        Title="WindowAjout" Height="577.661" Width="463.207" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <DockPanel>
         <Menu DockPanel.Dock="Top" Height="30" Background="Black">
             <MenuItem  Header="_Fichier" Margin="0,5,0,0" Background="Black" Foreground="White" >
@@ -31,11 +31,11 @@
             <TextBox x:Name="titre" HorizontalAlignment="Left" Height="25" Margin="197,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}"/>
             <TextBox x:Name="categorie" HorizontalAlignment="Left" Height="25" Margin="197,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}"/>
             <TextBox x:Name="tempsprepa" HorizontalAlignment="Left" Height="25" Margin="197,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}"/>
-            <TextBox x:Name="modeprepa" HorizontalAlignment="Left" Height="25" Margin="197,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2"/>
-            <TextBox x:Name="nbrperson" HorizontalAlignment="Left" Height="25" Margin="197,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2"/>
-            <TextBox x:Name="ingrédients" HorizontalAlignment="Left" Height="132" Margin="197,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2"/>
-            <Button x:Name="button1" Content="Ajouter" HorizontalAlignment="Left" Margin="49,450,0,0" Width="150" Grid.ColumnSpan="2" Height="31" VerticalAlignment="Top" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}"/>
-            <Button x:Name="button2" Content="Ajouter et fermer" HorizontalAlignment="Left" Margin="247,450,0,0" Width="157" Grid.ColumnSpan="2" Height="31" VerticalAlignment="Top" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}"/>
+            <TextBox x:Name="modeprepa" HorizontalAlignment="Left" Height="25" Margin="197,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}"/>
+            <TextBox x:Name="nbrperson" HorizontalAlignment="Left" Height="25" Margin="197,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}"/>
+            <TextBox x:Name="ingrédients" HorizontalAlignment="Left" Height="132" Margin="197,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}"/>
+            <Button x:Name="button1" Click="AddPresta_Click" Content="Ajouter" HorizontalAlignment="Left" Margin="49,450,0,0" Width="150" Grid.ColumnSpan="2" Height="31" VerticalAlignment="Top" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}"/>
+            <Button x:Name="button2" Click="AddClosePresta_Click" Content="Ajouter et fermer" HorizontalAlignment="Left" Margin="247,450,0,0" Width="157" Grid.ColumnSpan="2" Height="31" VerticalAlignment="Top" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}"/>
             <CheckBox Grid.ColumnSpan="2" Content="Activé" Margin="197,402,184,0" Height="15" VerticalAlignment="Top" IsChecked="True" Foreground="#FFB7C3C8" FontWeight="Bold"/>
 
         </Grid>

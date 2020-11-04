@@ -7,32 +7,37 @@
         mc:Ignorable="d"
         Title="WindowDevis" Height="450" Width="697.951">
     <Grid Margin="0,0,2,0">
-        <ListView x:Name ="Mygrid" Margin="34,57,35,29" Background="#FF5C686D" BorderBrush="#FF1F292E">
+        <ListView x:Name ="Mygrid" Margin="143,40,33,46" Background="#FF5C686D" BorderBrush="#FF1F292E" SelectionChanged="Mygrid_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="30*"/>
-                            <RowDefinition Height="29*"/>
+                            <RowDefinition Height="325*"/>
+                            <RowDefinition Height="121*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="713*" />
                         </Grid.ColumnDefinitions>
-                        <Image Height="147" VerticalAlignment="Top" Grid.Column="0" Source="" Margin="4,74,0,0" HorizontalAlignment="Left" Width="193"/>
-                        <Label VerticalAlignment="Top" Width="194" Height="49" FontFamily="Tahoma" Content="" FontSize="24" Margin="4,20,515,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FF00CB37" Padding="5" BorderThickness="1" Background="#FF98FF81"/>
-                        <Label HorizontalAlignment="Left" Margin="304,20,0,0" VerticalAlignment="Top" Width="163" Height="30" Content="" FontWeight="Bold" Background="#FFC79A23"/>
-                        <Label HorizontalAlignment="Left" Margin="316,55,0,0" VerticalAlignment="Top" Width="94" Height="30" Content="" FontWeight="Bold" Background="#FFC79A23"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="584,22,0,0" VerticalAlignment="Top" Width="119" Height="30" Text="" TextWrapping="Wrap" FontWeight="Bold" Background="#FFC79A23"/>
-                        <Label HorizontalAlignment="Left" Margin="584,56,0,0" VerticalAlignment="Top" Width="119" Height="30" Content="" FontWeight="Bold" Background="#FFC79A23"/>
-                        <TextBlock HorizontalAlignment="Left" Margin="304,91,0,0" VerticalAlignment="Top" Width="399" Height="93" Text="" TextWrapping="Wrap" FontWeight="Bold" Background="#FFC79A23"/>
-                        <Label HorizontalAlignment="Left" Margin="304,189,0,0" VerticalAlignment="Top" Width="198" Height="30" Content="" FontWeight="Bold" Background="#FFC79A23"/>
-                        <Label HorizontalAlignment="Left" Margin="472,22,0,0" VerticalAlignment="Top" Width="107" Height="30" Content="Ingrédient :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF7E8E8"/>
-                        <Label HorizontalAlignment="Left" Margin="459,56,0,0" VerticalAlignment="Top" Width="120" Height="30" Content="Nmbr. de personne :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-                        <Label HorizontalAlignment="Left" Margin="203,22,0,0" VerticalAlignment="Top" Width="65" Height="30" Content="Catégorie :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-                        <Label HorizontalAlignment="Left" Margin="203,56,0,0" VerticalAlignment="Top" Width="108" Height="30" Content="Temps de prépa :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-                        <Label HorizontalAlignment="Left" Margin="203,112,0,0" VerticalAlignment="Top" Width="115" Height="30" Content="Mode prépation :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
-                        <Label HorizontalAlignment="Left" Margin="203,191,0,0" VerticalAlignment="Top" Width="83" Height="30" Content="Origine :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-                        <Rectangle HorizontalAlignment="Left" Height="240" Stroke="#FFCB6600" VerticalAlignment="Top" Width="713" StrokeThickness="3" Opacity="0.7"/>
+                        <Label VerticalAlignment="Top" Width="194" Height="49" FontFamily="Tahoma" Content="{Binding Nom}" FontSize="24" Margin="10,138,596,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="5" BorderThickness="1" Background="#FF81E8FF"/>
+                        <Label HorizontalAlignment="Left" Margin="581,52,0,0" VerticalAlignment="Top" Width="209" Height="30" Content="{Binding Email}" FontWeight="Bold" Background="#FF81E8FF"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="348,52,0,0" VerticalAlignment="Top" Width="134" Height="30" Text="{Binding Numero}" TextWrapping="Wrap" FontWeight="Bold" Background="#FF81E8FF"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="304,96,0,0" VerticalAlignment="Top" Width="178" Height="156" Text="{Binding Exigence}" TextWrapping="Wrap" FontWeight="Bold" Background="#FF81E8FF"/>
+                        <Label HorizontalAlignment="Left" Margin="304,273,0,0" VerticalAlignment="Top" Width="178" Height="30" Content="{Binding Prix}" FontWeight="Bold" Background="#FF81E8FF"/>
+                        <Label HorizontalAlignment="Left" Margin="221,52,0,0" VerticalAlignment="Top" Width="115" Height="30" Content="Numéros portable :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF7E8E8"/>
+                        <Label HorizontalAlignment="Left" Margin="511,52,0,0" VerticalAlignment="Top" Width="65" Height="30" Content="Email :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
+                        <Label HorizontalAlignment="Left" Margin="221,136,0,0" VerticalAlignment="Top" Width="78" Height="30" Content="Exigences :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
+                        <Label HorizontalAlignment="Left" Margin="221,273,0,0" VerticalAlignment="Top" Width="70" Height="30" Content="Prix Total :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
+                        <Label VerticalAlignment="Top" Width="194" Height="46" FontFamily="Tahoma" Content="{Binding Prenom}" FontSize="24" Margin="9,228,597,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="5" BorderThickness="1" Background="#FF81E8FF"/>
+                        <Label HorizontalAlignment="Left" Margin="85,61,0,0" VerticalAlignment="Top" Width="119" Height="30" Content="{Binding Id}" FontWeight="Bold" Background="#FF34A67D"/>
+                        <Label HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="65" Height="30" Content="N° ID :" FontWeight="Bold" FontSize="14" FontStyle="Italic" Foreground="#FFF3E5E5"/>
+                        <Label HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Width="193" Height="47" Content="DEVIS" FontWeight="Bold" FontSize="24" FontStyle="Italic" Foreground="#FFF3E5E5"/>
+                        <ListBox x:Name="MyCalculSommeDevis"  HorizontalAlignment="Left" Margin="581,96,0,0" VerticalAlignment="Top" Width="209" Height="107" ItemsSource="{Binding Prestataires}" FontWeight="Bold" Background="#FF81E8FF"/>
+                        <Label HorizontalAlignment="Left" Margin="498,123,0,0" VerticalAlignment="Top" Width="78" Height="53" Content="Prestataires&#xD;&#xA;choisi :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
+                        <ListBox x:Name="MyListPrestaIndispo"  HorizontalAlignment="Left" Margin="581,217,0,0" VerticalAlignment="Top" Width="209" Height="86" ItemsSource="{Binding PrestatairesIndisponibles}" FontWeight="Bold" Background="#FF81E8FF"/>
+                        <Label HorizontalAlignment="Left" Margin="492,228,0,0" VerticalAlignment="Top" Width="84" Height="53" Content="Prestataires&#xA;indisponible :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
+                        <Label HorizontalAlignment="Left" Margin="10,109,0,0" VerticalAlignment="Top" Width="78" Height="24" Content="Nom :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
+                        <Label HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" Width="78" Height="23" Content="Prénom :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
+
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
