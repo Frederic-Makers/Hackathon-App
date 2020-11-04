@@ -13,15 +13,14 @@ namespace PrestataireBusiness
     public class DevisPrestataireAccess
     {
         private static MySqlConnection connection;
-
         static DevisPrestataireAccess()
         {
-            String connString = "Server=remotemysql.com/phpmyadmin/sql.php?server=1&db=qgO0M364Or&table=Prestataire&pos=0;Database=qgO0M364Or;userid=sgroot;Pwd=7Hyomgetg3";
+            String connString = "Server=remotemysql.com;Database=qgO0M364Or;userid=qgO0M364Or;Pwd=7Hyomgetg3";
             connection = new MySqlConnection(connString);
         }
         public static void GetDevisPrestataire()
         {
-            String sql = "SELECT * FROM devisprestataire";
+            String sql = "SELECT * FROM DevisPrestataire";
             using (MySqlCommand command = new MySqlCommand(sql, connection))
             {
                 command.Connection.Open();
@@ -36,16 +35,14 @@ namespace PrestataireBusiness
                         int prixid = dbReader.GetInt32(3);
 
                         Business.DevisPrestataire.Add(new DevisPrestataire(id, devisid, prestataireid, prixid));
-
                     }
                 }
                 command.Connection.Close();
             }
-
         }
         public static bool InsertDevisPrestataire(DevisPrestataire p)
         {
-            string sql = "INSERT INTO prestataire(Id, DevisId, PrestataireId) " +
+            string sql = "INSERT INTO DevisPrestataire(Id, DevisId, PrestataireId) " +
                          "VALUE (@id, @devisid, @prestataireid)";
             using (MySqlCommand cmd = new MySqlCommand(sql, connection))
             {
@@ -61,7 +58,7 @@ namespace PrestataireBusiness
         }
         public static bool UpdateDevisPrestataire(DevisPrestataire p)
         {
-            string sql = "UPDATE devisprestataire SET DevisId=@devisid, PrestataireId=@prestataireid"
+            string sql = "UPDATE DevisPrestataire SET DevisId=@devisid, PrestataireId=@prestataireid"
                 + " Where Id=@id ";
 
             using (MySqlCommand cmd = new MySqlCommand(sql, connection))
