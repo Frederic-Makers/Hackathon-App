@@ -34,5 +34,9 @@ namespace PrestataireBusiness
             this.Activation = activation;
             this.Prix = prix;
         }
+        public Prestataire(String url)
+        {
+            this.Url = url;
+        }
     }
 }
