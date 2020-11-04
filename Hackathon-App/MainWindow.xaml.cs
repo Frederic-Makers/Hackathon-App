@@ -1,5 +1,7 @@
-﻿using System;
+﻿using PrestataireBusiness;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,35 +22,59 @@ namespace Hackathon_App
     /// </summary>
     public partial class MainWindow : Window
     {
+        ObservableCollection<Prestataire> Listfiltre = new ObservableCollection<Prestataire>();
+        //private Prestataire p;
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click_Add(object sender, RoutedEventArgs e)
-        {
-            WindowAjout wa = new WindowAjout(this);
-            wa.Show();
+            EDITPresta.IsEnabled = false;
         }
 
         private void ADDPresta_Click(object sender, RoutedEventArgs e)
         {
-
+            WindowAdd wa = new WindowAdd(this);
+            wa.Show();            
         }
 
         private void EDITPresta_Click(object sender, RoutedEventArgs e)
         {
-
+            WindowEdit we = new WindowEdit(this);
+            we.Show();
         }
 
         private void LOADPresta_Click(object sender, RoutedEventArgs e)
         {
-
+            Business.Prestataires.Clear();
+            Listfiltre.Clear();
+            PrestataireAcces.GetPrestataire();
+            Mygrid.ItemsSource = Business.Prestataires;
         }
 
         private void FILTERPresta_Click(object sender, RoutedEventArgs e)
         {
-
+            if (MyfilterCategorie.Text != "")
+            {
+                foreach (var item in Business.Prestataires)
+                {
+                    if (item.Categorie != "")
+                    {
+                        try
+                        {
+                            String categorie = (item.Categorie);
+                            if (categorie == MyfilterCategorie.Text)
+                            {
+                                Listfiltre.Add(item);
+                            }
+                        }
+                        catch (Exception) { }
+                    }
+                }
+                Mygrid.ItemsSource = Listfiltre;
+            }
+            else
+            {
+                Mygrid.ItemsSource = Business.Prestataires;
+            }
         }
 
         private void UnfinishedDevis_Click(object sender, RoutedEventArgs e)
@@ -63,7 +89,17 @@ namespace Hackathon_App
 
         private void NEW_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBoxResult result = MessageBox.Show("Effacer toute les listes [?] cela n'affectera pas la Base de donnée", "Marquises Wedding", MessageBoxButton.OKCancel);
+            switch (result)
+            {
+                case MessageBoxResult.OK:
+                    Listfiltre.Clear();
+                    Business.Prestataires.Clear();
+                    break;
+                case MessageBoxResult.Cancel:
+                    break;
+            }
+            
         }
 
         private void PRINT_Click(object sender, RoutedEventArgs e)
@@ -73,7 +109,16 @@ namespace Hackathon_App
 
         private void EXIT_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBoxResult result = MessageBox.Show("Fermer le programme [?]", "Marquises Wedding", MessageBoxButton.OKCancel);
+            switch (result)
+            {
+                case MessageBoxResult.OK:
+                    Application.Current.Shutdown();
+                    break;
+                case MessageBoxResult.Cancel:
+                    break;
+            }
+            
         }
 
         private void LOADPrestaMenu_Click(object sender, RoutedEventArgs e)

@@ -19,9 +19,13 @@ namespace Hackathon_App
     /// </summary>
     public partial class WindowEdit : Window
     {
-        public WindowEdit()
+        public MainWindow mw;
+        public WindowEdit(MainWindow mw)
         {
             InitializeComponent();
+
+            this.mw = mw;
+
         }
     }
 }
