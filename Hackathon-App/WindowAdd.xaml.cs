@@ -77,6 +77,7 @@ namespace Hackathon_App
             if (PrestataireAcces.InsertPrestataire(p))
             {
                 MessageBox.Show(" Les infos client ont bien été envoyés ");
+                mw.LOADbdd();
             }
             else
             {
