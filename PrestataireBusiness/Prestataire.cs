@@ -19,7 +19,7 @@ namespace PrestataireBusiness
 
         public Prestataire()
         {
-
+             
         }
         public Prestataire(int id, String nom, String url, String categorie, String contact, String adresse,
                        String description, Boolean activation, String prix)
