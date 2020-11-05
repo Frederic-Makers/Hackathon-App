@@ -38,8 +38,9 @@ namespace DevisBusiness
                         string Email = dbReader.GetString(4);
                         string Exigence = dbReader.GetString(5);
                         string Numero = dbReader.GetString(6);
-                   
-                        Business.Devis.Add(new Devis(Id, Nom, Prenom, Date, Email, Exigence, Numero));
+                        Devis d = new Devis(Id, Nom, Prenom, Date, Email, Exigence, Numero);
+                        DevisPrestataireAccess.GetDevisPrestataire(d);
+                        Business.Devis.Add(d);
                     }
                 }
                 command.Connection.Close();

@@ -34,9 +34,22 @@ namespace PrestataireBusiness
             this.Numero = numero;
         }
 
-        public List<Prestataire> GetPrestatairesDevis ()
-        {
-            int tailleListe = DevisPrestataires.Count;
-        }
+        //public List<Prestataire> GetPrestatairesDevis (DevisPrestataire dv)
+        //{
+        //    int tailleListePrestataire = Business.Prestataires.Count;
+        //    for (int i = 0; i < tailleListePrestataire; i++)
+        //    {
+        //        if(Business.Prestataires[i].Id == dv.Id)
+        //        {
+        //            DevisPrestataires.Add(Business.Prestataires[i].Nom);
+        //            for (int i2; i2 < )
+        //            {
+
+        //            }
+        //        }
+        //    }
+
+        //    return null;
+        //}
     }
 }

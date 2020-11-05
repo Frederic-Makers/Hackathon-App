@@ -36,8 +36,17 @@ namespace PrestataireBusiness
                         int devisid = dbReader.GetInt32(0);
                         int prestataireid = dbReader.GetInt32(1);
                         int prix = dbReader.GetInt32(2);
+                        DevisPrestataire dp = new DevisPrestataire(0, devisid, prestataireid, prix);
+                        foreach (Prestataire p in Business.Prestataires) { 
+                            if(p.Id == prestataireid)
+                            {
+                                dp.Nom = p.Nom;
+                                break;
+                            }
+                        }
 
-                        d.DevisPrestataires.Add(new DevisPrestataire(0, devisid, prestataireid, prix));
+                        
+                        d.DevisPrestataires.Add(dp);
                     }
                 }
                 command.Connection.Close();

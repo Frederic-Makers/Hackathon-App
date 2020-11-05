@@ -34,11 +34,8 @@ namespace Hackathon_App
             DevisBusiness.DevisAccess.GetDevis();
             MyGridDevis.ItemsSource = Business.Devis;
 
-            DevisPrestataireAccess.GetDevisPrestataire();
 
         }
-
-        public void 
 
         public void LoadAllDevis()
         {
