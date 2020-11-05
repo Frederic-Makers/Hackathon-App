@@ -21,7 +21,7 @@ namespace PrestataireBusiness
         public static void GetDevisPrestataire(Devis d)
         {
 
-            String sql = "SELECT * FROM DevisPrestataire WHERE devisId=@devisId ";
+            String sql = "SELECT devisid, prestataireid, dp.prix, nom FROM DevisPrestataire dp inner join Prestataire p on dp.prestataireid = p.id WHERE devisId=@devisId ";
             using (MySqlCommand command = new MySqlCommand(sql, connection))
             {
 
@@ -36,14 +36,9 @@ namespace PrestataireBusiness
                         int devisid = dbReader.GetInt32(0);
                         int prestataireid = dbReader.GetInt32(1);
                         int prix = dbReader.GetInt32(2);
-                        DevisPrestataire dp = new DevisPrestataire(0, devisid, prestataireid, prix);
-                        foreach (Prestataire p in Business.Prestataires) { 
-                            if(p.Id == prestataireid)
-                            {
-                                dp.Nom = p.Nom;
-                                break;
-                            }
-                        }
+                        string nom = dbReader.GetString(3);
+                        DevisPrestataire dp = new DevisPrestataire(devisid, prestataireid, prix) { Nom = nom};
+                        
 
                         
                         d.DevisPrestataires.Add(dp);
@@ -77,7 +72,6 @@ namespace PrestataireBusiness
             {
                 cmd.Connection.Open();
 
-                cmd.Parameters.AddWithValue("@id", p.Id);
                 cmd.Parameters.AddWithValue("@devisid", p.DevisId);
                 cmd.Parameters.AddWithValue("@prestataireid", p.PrestataireId);
 
