@@ -47,7 +47,8 @@ namespace Hackathon_App
             
                 if (PrestataireAcces.UpdatePrestataire(p))
                 {
-                    MessageBox.Show("Le prestataire Id: " + p.Id + " a bien était mis à jour");
+                    MessageBox.Show("Le prestataire Id:" + p.Id + ", nommé " + p.Nom + " a bien était mis à jour");
+                    mw.LOADbdd();
                 }
                 else
                 {
@@ -60,7 +61,8 @@ namespace Hackathon_App
                 Prestataire p = new Prestataire(0, Nom.Text, Url.Text, MyfilterCategorie.Header.ToString().Replace("_", ""), Contact.Text, Adresse.Text, Description.Text, Activation.IsChecked.Value, Prix.Text);
                 if (PrestataireAcces.InsertPrestataire(p))
                 {
-                    MessageBox.Show(" Les infos client ont bien été envoyés ");
+                    MessageBox.Show(" Prestataire n°Id: " + p.Id + " nommé " + p.Nom + " a bien était ajouté à la base de donnée");
+                    mw.LOADbdd();
                 }
                 else
                 {

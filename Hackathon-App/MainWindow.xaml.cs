@@ -78,6 +78,14 @@ namespace Hackathon_App
             Mygrid.ItemsSource = Business.Prestataires;
         }
 
+        public void LOADbdd()
+        {
+            Business.Prestataires.Clear();
+            Listfiltre.Clear();
+            PrestataireAcces.GetPrestataire();
+            Mygrid.ItemsSource = Business.Prestataires;
+        }
+
         public void Filter()
         {
             Listfiltre.Clear();
