@@ -92,7 +92,7 @@ namespace Hackathon_App
             wd.Numero.Text = d2.Numero;
 
 
-            wd.LoadPrestataireSelected.ItemsSource = Devis.DevisPrestataires;
+           // wd.LoadPrestataireSelected.ItemsSource = Devis.DevisPrestataires;
         
 
 
