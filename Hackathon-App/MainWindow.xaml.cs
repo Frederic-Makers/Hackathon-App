@@ -41,19 +41,21 @@ namespace Hackathon_App
         private void EDITPresta_Click(object sender, RoutedEventArgs e)
         {
             WindowAdd wa = new WindowAdd(this);
+            Prestataire p = Business.p;
             wa.modeEdit = true;
             wa.Show();
             wa.labelTitre.Content = "Editer le prestataire Id" + Business.p.Id;
             wa.button2.Visibility = Visibility.Hidden;
             wa.button1.Content = "Editer et fermer";
             wa.Title = "Editer Prestataire";
-            wa.Nom.Text = Business.p.Nom;
-            wa.Url.Text = Business.p.Url;
-            wa.Categorie.Text = Business.p.Categorie;
-            wa.Contact.Text = Business.p.Contact;
-            wa.Adresse.Text = Business.p.Adresse;
-            wa.Description.Text = Business.p.Description;
-            wa.Activation.IsChecked = Business.p.Activation;
+            wa.Nom.Text = p.Nom;
+            wa.Url.Text = p.Url;
+            wa.Categorie.Text = p.Categorie;
+            wa.Contact.Text = p.Contact;
+            wa.Adresse.Text = p.Adresse;
+            wa.Description.Text = p.Description;
+            wa.Activation.IsChecked = p.Activation;
+            wa.Prix.Text = p.Prix;
 
         }
 
@@ -109,12 +111,13 @@ namespace Hackathon_App
             {
                 case MessageBoxResult.OK:
                     Listfiltre.Clear();
+                    
                     Business.Prestataires.Clear();
                     break;
                 case MessageBoxResult.Cancel:
                     break;
             }
-            
+            EDITPresta.IsEnabled = false;
         }
 
         private void PRINT_Click(object sender, RoutedEventArgs e)
@@ -138,7 +141,10 @@ namespace Hackathon_App
 
         private void LOADPrestaMenu_Click(object sender, RoutedEventArgs e)
         {
-
+            Business.Prestataires.Clear();
+            Listfiltre.Clear();
+            PrestataireAcces.GetPrestataire();
+            Mygrid.ItemsSource = Business.Prestataires;
         }
 
         private void Mygrid_SelectionChanged(object sender, SelectionChangedEventArgs e)

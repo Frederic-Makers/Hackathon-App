@@ -53,6 +53,7 @@ namespace Hackathon_App
                 {
                     MessageBox.Show(" Une Erreur c'est produite [UPDATE Methode] ");
                 }
+                this.Close();
             }
             else
             {
