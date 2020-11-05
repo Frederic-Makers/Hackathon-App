@@ -33,7 +33,7 @@ namespace Hackathon_App
         private void ADDPresta_Click(object sender, RoutedEventArgs e)
         {
             WindowAdd wa = new WindowAdd(this);
-            wa.ShowDialog();
+            wa.Show();
             wa.modeEdit = false;
             wa.Title = "Ajouter un Prestataire";
         }
@@ -42,21 +42,32 @@ namespace Hackathon_App
         {
             WindowAdd wa = new WindowAdd(this);
             Prestataire p = Business.p;
-            wa.modeEdit = true;
-            wa.ShowDialog();
-            wa.labelTitre.Content = "Editer le prestataire Id" + Business.p.Id;
-            wa.button2.Visibility = Visibility.Hidden;
-            wa.button1.Content = "Editer et fermer";
-            wa.Title = "Editer Prestataire";
-            wa.Nom.Text = p.Nom;
-            wa.Url.Text = p.Url;
-            wa.Categorie.Text = p.Categorie;
-            wa.Contact.Text = p.Contact;
-            wa.Adresse.Text = p.Adresse;
-            wa.Description.Text = p.Description;
-            wa.Activation.IsChecked = p.Activation;
-            wa.Prix.Text = p.Prix;
+            
 
+
+            if (Business.p != null)
+            {
+                wa.modeEdit = true;
+                wa.Show();
+                wa.labelTitre.Content = "Editer le prestataire Id" + Business.p.Id;
+                wa.button2.Visibility = Visibility.Hidden;
+                wa.button1.Content = "Editer et fermer";
+                wa.Title = "Editer Prestataire";
+                wa.Nom.Text = p.Nom;
+                wa.Url.Text = p.Url;
+                wa.MyfilterCategorie.Header = "_" + p.Categorie;
+                wa.Contact.Text = p.Contact;
+                wa.Adresse.Text = p.Adresse;
+                wa.Description.Text = p.Description;
+                wa.Activation.IsChecked = p.Activation;
+                wa.Prix.Text = p.Prix;
+            }
+            else
+            {
+                EDITPresta.IsEnabled = false;
+                MessageBox.Show("Aucun prestataire selectionner");
+               
+            }    
         }
 
         private void LOADPresta_Click(object sender, RoutedEventArgs e)
@@ -67,9 +78,10 @@ namespace Hackathon_App
             Mygrid.ItemsSource = Business.Prestataires;
         }
 
-        private void FILTERPresta_Click(object sender, RoutedEventArgs e)
+        public void Filter()
         {
-            if (MyfilterCategorie.Text != "")
+            Listfiltre.Clear();
+            if (MyfilterCategorie.Header.ToString() != "_Tous les Catégories")
             {
                 foreach (var item in Business.Prestataires)
                 {
@@ -78,7 +90,34 @@ namespace Hackathon_App
                         try
                         {
                             String categorie = (item.Categorie);
-                            if (categorie == MyfilterCategorie.Text)
+                            if (categorie == MyfilterCategorie.Header.ToString().Replace("_",""))
+                            {
+                                Listfiltre.Add(item);
+                            }
+                        }
+                        catch (Exception) { }
+                    }
+                }
+                Mygrid.ItemsSource = Listfiltre;
+            }
+            else
+            {
+                Mygrid.ItemsSource = Business.Prestataires;
+            }
+        }
+
+        public void FILTERPresta_Click(object sender, RoutedEventArgs e)
+        {
+            if (MyfilterCategorie.Header.ToString() != "_Tous les Catégories")
+            {
+                foreach (var item in Business.Prestataires)
+                {
+                    if (item.Categorie != "")
+                    {
+                        try
+                        {
+                            String categorie = (item.Categorie);
+                            if (categorie == MyfilterCategorie.Header.ToString())
                             {
                                 Listfiltre.Add(item);
                             }
@@ -111,7 +150,7 @@ namespace Hackathon_App
             {
                 case MessageBoxResult.OK:
                     Listfiltre.Clear();
-                    
+                    MyfilterCategorie.Header = "_Tous les Catégories";
                     Business.Prestataires.Clear();
                     break;
                 case MessageBoxResult.Cancel:
@@ -164,19 +203,35 @@ namespace Hackathon_App
             WindowAdd wa = new WindowAdd(this);
             Prestataire p2 = Business.p;
             wa.modeEdit = true;
-            wa.ShowDialog();
+            wa.Show();
             wa.labelTitre.Content = "Editer le prestataire Id" + Business.p.Id;
             wa.button2.Visibility = Visibility.Hidden;
             wa.button1.Content = "Editer et fermer";
             wa.Title = "Editer Prestataire";
             wa.Nom.Text = p2.Nom;
             wa.Url.Text = p2.Url;
-            wa.Categorie.Text = p2.Categorie;
+            wa.MyfilterCategorie.Header = "_" + p2.Categorie;
             wa.Contact.Text = p2.Contact;
             wa.Adresse.Text = p2.Adresse;
             wa.Description.Text = p2.Description;
             wa.Activation.IsChecked = p2.Activation;
             wa.Prix.Text = p2.Prix;
+        }
+        private void AllCategories_Click(object sender, RoutedEventArgs e)
+        {
+            MyfilterCategorie.Header = "_Tous les Catégories";
+            Filter();
+        }
+        private void Decorateur_Click(object sender, RoutedEventArgs e)
+        {
+            MyfilterCategorie.Header = "_Décorateur";
+            Filter();
+        }
+
+        private void Musique_Click(object sender, RoutedEventArgs e)
+        {
+            MyfilterCategorie.Header = "_Musique";
+            Filter();
         }
     }
 }

@@ -5,32 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hackathon_App"
         mc:Ignorable="d"
-        Title="WindowAjout" Height="577.661" Width="463.207" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="WindowAjout" Height="577.661" Width="463.207" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FF3C484D">
     <DockPanel>
-        <Menu DockPanel.Dock="Top" Height="30" Background="Black">
-            <MenuItem  Header="_Fichier" Margin="0,5,0,0" Background="Black" Foreground="White" >
-                <MenuItem Header="_Effacer" Background="#FF232E3C" BorderBrush="{x:Null}" Foreground="White"/>
-                <Separator />
-                <MenuItem Header="_Fermer" Background="#FF232E3C"/>
-            </MenuItem>
-
-        </Menu>
         <Grid Width="454" Background="#FF3C484D">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Label x:Name="labelTitre" Content="AJOUTER UN PRESTATAIRE" HorizontalAlignment="Left" Height="52" Margin="119,25,0,0" VerticalAlignment="Top" Width="212" FontWeight="Bold" Grid.ColumnSpan="2" FontSize="16" Foreground="White"/>
-            <Label Content="Nom" HorizontalAlignment="Left" Height="25" Margin="49,95,0,0" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
-            <Label Content="Url image" HorizontalAlignment="Left" Height="30" Margin="49,125,0,0" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
-            <Label Content="Catégorie" HorizontalAlignment="Left" Height="25" Margin="49,155,0,0" VerticalAlignment="Top" Width="140" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
+
+            <Menu Height="24" VerticalAlignment="Top" HorizontalAlignment="Right" Width="152" Background="{x:Null}" BorderBrush="#FF1F292E" BorderThickness="1" Grid.ColumnSpan="2" Margin="0,80,108,0">
+                <MenuItem x:Name="MyfilterCategorie" Header="_Non-défini" Template="{DynamicResource MakersMenuItemStyle}" Height="24" Width="152" Foreground="#FFB7C3C8" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Calibri" Margin="0" Padding="6,0">
+                    <MenuItem Click="Decorateur_Click" Header="_Décorateur" Foreground="#FFB7C3C8" Margin="0,10,0,5" />
+                    <MenuItem Click="Vehicule_Click" Header="_Vehicule" Foreground="#FFB7C3C8" />
+                    <MenuItem Click="Musique_Click" Header="_Musique" Foreground="#FFB7C3C8" />
+                </MenuItem>
+            </Menu>
+
+            <Label Content="Nom" HorizontalAlignment="Left" Height="26" Margin="49,126,0,0" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
+            <Label Content="Url image" HorizontalAlignment="Left" Height="30" Margin="49,156,0,0" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
+            <Label Content="Catégorie" HorizontalAlignment="Left" Height="25" Margin="49,77,0,0" VerticalAlignment="Top" Width="140" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
             <Label Content="Contact" HorizontalAlignment="Left" Height="25" Margin="49,185,0,0" VerticalAlignment="Top" Width="140" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
             <Label Content="Adresse" HorizontalAlignment="Left" Height="25" Margin="49,215,0,0" VerticalAlignment="Top" Width="140" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
             <Label Content="Description" HorizontalAlignment="Left" Height="29" Margin="49,272,0,0" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
             <Label Content="Activation" Margin="49,405,323,0" Grid.ColumnSpan="2" Height="29" VerticalAlignment="Top" Foreground="#FFB7C3C8" FontWeight="Bold"/>
-            <TextBox x:Name="Nom" Text="" HorizontalAlignment="Left" Height="25" Margin="197,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}"/>
-            <TextBox x:Name="Url" Text="" HorizontalAlignment="Left" Height="25" Margin="197,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}"/>
-            <TextBox x:Name="Categorie" Text="" HorizontalAlignment="Left" Height="25" Margin="197,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}"/>
+            <TextBox x:Name="Nom" Text="" HorizontalAlignment="Left" Height="26" Margin="197,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}"/>
+            <TextBox x:Name="Url" Text="" HorizontalAlignment="Left" Height="26" Margin="197,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}"/>
             <TextBox x:Name="Contact" Text="" HorizontalAlignment="Left" Height="25" Margin="197,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}"/>
             <TextBox x:Name="Adresse" Text="" HorizontalAlignment="Left" Height="25" Margin="197,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}"/>
             <TextBox x:Name="Description" Text="" HorizontalAlignment="Left" Height="95" Margin="197,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}"/>
