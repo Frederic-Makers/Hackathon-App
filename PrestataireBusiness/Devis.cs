@@ -9,25 +9,34 @@ namespace PrestataireBusiness
         public int Id { get; set; }
         public String Nom { get; set; }
         public String Prenom { get; set; }
+        public DateTime Date { get; set; }
         public String Email { get; set; }
         public String Exigence { get; set; }
-        public int Numero { get; set; }
-        public List<Prestataire> Prestataires { get; set; }
+        public String Numero { get; set; }
+
+        public List<DevisPrestataire> DevisPrestataires { get; set; }
 
         public List<Prestataire> PrestatairesIndisponibles { get; set; }
 
         public Devis()
         {
-
+            this.DevisPrestataires = new List<DevisPrestataire>();
+            this.PrestatairesIndisponibles = new List<Prestataire>();
         }
-        public Devis(int id, String nom, String prenom, String email, String exigence, int numero)
+        public Devis(int id, String nom, String prenom, DateTime date, String email, String exigence, String numero) : this()
         {
             this.Id = id;
             this.Nom = nom;
             this.Prenom = prenom;
+            this.Date = date;
             this.Email = email;
             this.Exigence = exigence;
             this.Numero = numero;
+        }
+
+        public List<Prestataire> GetPrestatairesDevis ()
+        {
+            int tailleListe = DevisPrestataires.Count;
         }
     }
 }

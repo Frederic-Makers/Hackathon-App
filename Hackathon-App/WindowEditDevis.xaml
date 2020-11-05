@@ -1,0 +1,34 @@
+﻿<Window x:Class="Hackathon_App.WindowEditDevis"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hackathon_App"
+        mc:Ignorable="d"
+        Title="WindowEditDevis" Height="613.249" Width="1066.094" Background="#FF3A513A">
+    <DockPanel HorizontalAlignment="Left" Width="1056">
+        <Grid Width="1052" Background="#FF3A513A">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="labelTitre" Content="EDITER LE DEVIS N°" Height="40" Margin="417,38,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.ColumnSpan="2" FontSize="16" Foreground="White" HorizontalAlignment="Left" Width="224"/>
+
+            <Label Content="Nom" HorizontalAlignment="Left" Height="26" Margin="49,110,0,0" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
+            <Label Content="Prenom" HorizontalAlignment="Left" Height="30" Margin="49,141,0,0" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
+            <Label Content="Date" HorizontalAlignment="Left" Height="25" Margin="49,181,0,0" VerticalAlignment="Top" Width="140" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
+            <Label Content="Email" HorizontalAlignment="Left" Height="25" Margin="49,211,0,0" VerticalAlignment="Top" Width="140" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
+            <Label Content="Exigences" HorizontalAlignment="Left" Height="28" Margin="49,274,0,0" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
+            <TextBox x:Name="Nom" Text="" Height="26" Margin="147,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}" Background="#CCDDDDDD" HorizontalAlignment="Left" Width="381"/>
+            <TextBox x:Name="Prenom" Text="" Height="35" Margin="147,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="#CCDDDDDD" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="381"/>
+            <DatePicker x:Name="Date" Text="" HorizontalAlignment="Left" Height="25" Margin="147,181,0,0" VerticalAlignment="Top" Width="381" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2"  Background="#CCDDDDDD"/>
+            <TextBox x:Name="Email" Text="" HorizontalAlignment="Left" Height="25" Margin="147,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="381" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}" Background="#CCDDDDDD"/>
+            <TextBox x:Name="Exigence" Text="" HorizontalAlignment="Left" Height="165" Margin="147,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="381" Grid.ColumnSpan="2" Background="#CCDDDDDD" VerticalScrollBarVisibility="Auto" />
+            <Button x:Name="button1" Click="Edit_Click" Content="Editer" Margin="49,0,0,38" Grid.ColumnSpan="2" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" HorizontalAlignment="Left" Width="476" Height="36" VerticalAlignment="Bottom"/>
+            <Label Content="Numéro" HorizontalAlignment="Left" Height="25" Margin="49,454,0,0" VerticalAlignment="Top" Width="140" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
+            <TextBox x:Name="Numero" Text="" HorizontalAlignment="Left" Height="25" Margin="147,454,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="381" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}" Background="#CCDDDDDD"/>
+            <DataGrid x:Name="LoadPrestataireSelected" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="391" Margin="600,110,0,0" VerticalAlignment="Top" Width="380" BorderBrush="#FF2E5F8F" Padding="1" Background="#FFBDC1BD"/>
+
+        </Grid>
+    </DockPanel>
+</Window>

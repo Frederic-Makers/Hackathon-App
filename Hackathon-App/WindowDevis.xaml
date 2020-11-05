@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hackathon_App"
         mc:Ignorable="d"
-        Title="Devis Traiter" Height="522" Width="694.058" Background="#FF3C484D" WindowStartupLocation="CenterScreen" Icon="img/logo.png">
-    <DockPanel Margin="0,0,0,-4">
+        Title="Devis Traiter" Height="658.5" Width="1224.058" Background="#FF3C484D" WindowStartupLocation="CenterScreen" Icon="img/logo.png">
+    <DockPanel Margin="0,0,0,-4" Background="#FF3A513A">
 
 
-        <Menu DockPanel.Dock="Top" Height="35" Background="#FF3C484D" Margin="0,1,0,0" Padding="0,1,0,0">
+        <Menu DockPanel.Dock="Top" Height="35" Background="#FF3A513A" Margin="0,1,0,0" Padding="0,1,0,0">
 
             <MenuItem Header="_Fichier" InputGestureText = "Ctrl + O" Foreground="#FFB7C3C8" Template="{DynamicResource MakersMenuItemStyle}" Margin="0,1,0,11" >
                 <MenuItem Header="_Nouveau" Foreground="#FFB7C3C8" Background="#FF2F3439" Width="133" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <MenuItem Header="_Imprimer" Foreground="#FFB7C3C8" Background="#FF2F3439"/>
                 <Separator Background="#FF1F292E" Margin="0,1"/>
-                <MenuItem Header="_Quitter" Foreground="#FFB7C3C8" Background="#FF2F3439"/>
+                <MenuItem Header="_Fermer" Foreground="#FFB7C3C8" Background="#FF2F3439"/>
             </MenuItem>
             <MenuItem Header="_DataBase" InputGestureText = "Ctrl + O" Foreground="#FFB7C3C8" Template="{DynamicResource MakersMenuItemStyle}" Margin="0,1,0,11" >
                 <MenuItem Header="_Charger Devis" Foreground="#FFB7C3C8" Background="#FF2F3439"/>
@@ -24,58 +24,63 @@
 
         </Menu>
 
-        <Grid Background="#FF3C484D" Width="686">
-            <Image Source="/img/logo.png" IsEnabled="False" Height="59" Margin="402,0" VerticalAlignment="Top" RenderTransformOrigin="0.471,0.467" Opacity="0.1" />
-            <Rectangle Fill="#FF546065" Margin="265,42,10,64" Stroke="#FF1F292E" RadiusY="5" RadiusX="5"/>
+        <Grid Background="#FF3A513A" Width="1142">
+            <Image Source="/img/logo.png" IsEnabled="False" Height="59" Margin="404,-17,400,0" VerticalAlignment="Top" RenderTransformOrigin="0.471,0.467" Opacity="0.1" />
+            <Rectangle Fill="#FF546065" Margin="265,64,10,31" Stroke="#FF1F292E" RadiusY="5" RadiusX="5"/>
 
-            <ListView Margin="265,86,10,31" Background="#FF5C686D" BorderBrush="#FF1F292E">
+            <ListView x:Name="MyGridDevis"  Margin="265,130,10,31" Background="#FF5C686D" BorderBrush="#FF1F292E" ScrollViewer.CanContentScroll="False" MouseDoubleClick="MyGridDevis_MouseDoubleClick" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="325*"/>
-                                <RowDefinition Height="121*"/>
+                                <RowDefinition Height="337*"/>
+                                <RowDefinition Height="109*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="713*" />
                             </Grid.ColumnDefinitions>
-                            <Label VerticalAlignment="Top" Width="194" Height="49" FontFamily="Tahoma" Content="{Binding Nom}" FontSize="18" Margin="10,138,596,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="5" BorderThickness="1" Background="#FF81E8FF"/>
+                            <Label VerticalAlignment="Top" Width="194" Height="49" FontFamily="Tahoma" Content="{Binding Nom}" FontSize="18" Margin="27,174,612,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="5" BorderThickness="1" Background="#FF81E8FF"/>
                             <Label HorizontalAlignment="Left" Margin="581,52,0,0" VerticalAlignment="Top" Width="209" Height="30" Content="{Binding Email}" FontWeight="Bold" Background="#FF81E8FF"/>
                             <TextBlock HorizontalAlignment="Left" Margin="348,52,0,0" VerticalAlignment="Top" Width="134" Height="30" Text="{Binding Numero}" TextWrapping="Wrap" FontWeight="Bold" Background="#FF81E8FF"/>
                             <TextBlock HorizontalAlignment="Left" Margin="304,96,0,0" VerticalAlignment="Top" Width="178" Height="156" Text="{Binding Exigence}" TextWrapping="Wrap" FontWeight="Bold" Background="#FF81E8FF"/>
                             <Label HorizontalAlignment="Left" Margin="304,273,0,0" VerticalAlignment="Top" Width="178" Height="30" Content="{Binding Prix}" FontWeight="Bold" Background="#FF81E8FF"/>
                             <Label HorizontalAlignment="Left" Margin="221,52,0,0" VerticalAlignment="Top" Width="115" Height="30" Content="Numéros portable :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF7E8E8"/>
                             <Label HorizontalAlignment="Left" Margin="511,52,0,0" VerticalAlignment="Top" Width="65" Height="30" Content="Email :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-                            <Label HorizontalAlignment="Left" Margin="221,136,0,0" VerticalAlignment="Top" Width="78" Height="30" Content="Exigences :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
+                            <Label HorizontalAlignment="Left" Margin="221,141,0,0" VerticalAlignment="Top" Width="78" Height="30" Content="Exigences :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
                             <Label HorizontalAlignment="Left" Margin="221,273,0,0" VerticalAlignment="Top" Width="70" Height="30" Content="Prix Total :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-                            <Label VerticalAlignment="Top" Width="194" Height="46" FontFamily="Tahoma" Content="{Binding Prenom}" FontSize="18" Margin="9,228,597,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="5" BorderThickness="1" Background="#FF81E8FF"/>
-                            <Label HorizontalAlignment="Left" Margin="85,61,0,0" VerticalAlignment="Top" Width="119" Height="30" Content="{Binding Id}" FontWeight="Bold" Background="#FF34A67D"/>
-                            <Label HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="65" Height="30" Content="N° ID :" FontWeight="Bold" FontSize="14" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-                            <Label HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Width="193" Height="47" Content="DEVIS" FontWeight="Bold" FontSize="24" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-                            <ListBox x:Name="MyCalculSommeDevis"  HorizontalAlignment="Left" Margin="581,96,0,0" VerticalAlignment="Top" Width="209" Height="107" ItemsSource="{Binding Prestataires}" FontWeight="Bold" Background="#FF81E8FF"/>
+                            <Label VerticalAlignment="Top" Width="194" Height="46" FontFamily="Tahoma" Content="{Binding Prenom}" FontSize="18" Margin="27,257,612,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="5" BorderThickness="1" Background="#FF81E8FF"/>
+                            <Label HorizontalAlignment="Left" Margin="102,61,0,0" VerticalAlignment="Top" Width="101" Height="30" Content="{Binding Id}" FontWeight="Bold" Background="#FF34A67D"/>
+                            <Label HorizontalAlignment="Left" Margin="26,62,0,0" VerticalAlignment="Top" Width="65" Height="30" Content="N° ID :" FontWeight="Bold" FontSize="14" FontStyle="Italic" Foreground="#FFF3E5E5"/>
+                            <Label HorizontalAlignment="Left" Margin="26,14,0,0" VerticalAlignment="Top" Width="193" Height="43" Content="DEVIS" FontWeight="Bold" FontSize="24" FontStyle="Italic" Foreground="#FFF3E5E5"/>
+                            <ListBox x:Name="MyCalculSommeDevis"  HorizontalAlignment="Left" Margin="581,96,0,0" VerticalAlignment="Top" Width="209" Height="107" ItemsSource="{Binding DevisPrestataires}" FontWeight="Bold" Background="#FF81E8FF"/>
                             <Label HorizontalAlignment="Left" Margin="498,123,0,0" VerticalAlignment="Top" Width="78" Height="53" Content="Prestataires&#xD;&#xA;choisi :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
                             <ListBox x:Name="MyListPrestaIndispo"  HorizontalAlignment="Left" Margin="581,217,0,0" VerticalAlignment="Top" Width="209" Height="86" ItemsSource="{Binding PrestatairesIndisponibles}" FontWeight="Bold" Background="#FF81E8FF"/>
                             <Label HorizontalAlignment="Left" Margin="492,228,0,0" VerticalAlignment="Top" Width="84" Height="53" Content="Prestataires&#xA;indisponible :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
-                            <Label HorizontalAlignment="Left" Margin="10,109,0,0" VerticalAlignment="Top" Width="78" Height="24" Content="Nom :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
-                            <Label HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" Width="78" Height="23" Content="Prénom :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
+                            <Label HorizontalAlignment="Left" Margin="27,145,0,0" VerticalAlignment="Top" Width="78" Height="24" Content="Nom :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
+                            <Label HorizontalAlignment="Left" Margin="27,228,0,0" VerticalAlignment="Top" Width="78" Height="23" Content="Prénom :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
+                            <Label HorizontalAlignment="Left" Margin="27,112,0,0" VerticalAlignment="Top" Width="78" Height="24" Content="Date :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
+                            <Label VerticalAlignment="Top" Width="181" Height="30" FontFamily="Tahoma" Content="{Binding Date}" FontSize="18" Margin="75,106,577,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="5" BorderThickness="1" Background="#FF81E8FF"/>
+                            <Rectangle HorizontalAlignment="Left" Height="327" RadiusY="5" RadiusX="5" Stroke="#FF292E30" VerticalAlignment="Top" Width="833"/>
 
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Rectangle Fill="#FF546065" Margin="10,42,0,31" Stroke="#FF1F292E" RadiusY="4" RadiusX="4" HorizontalAlignment="Left" Width="250"/>
+            <Rectangle Fill="#FF546065" Margin="10,63,0,31" Stroke="#FF1F292E" RadiusY="4" RadiusX="4" HorizontalAlignment="Left" Width="250"/>
 
-            <Image Source="/img/FiltreLog.png" Height="29" Margin="0,52,15,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="33" />
+            <Image Source="/img/FiltreLog.png" Height="29" Margin="0,80,34,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="33" />
 
-            <Button Content="Calculer le prix total" Margin="16,112,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" HorizontalAlignment="Left" Width="236" Foreground="#FFB7C3C8" FontFamily="Calibri" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Padding="1,1,1,3" BorderThickness="1"/>
-            <Button Content="Retirer un Prestataire" Margin="15,146,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
-            <Button Content="Filtrer la catégorie" Margin="0,52,48,0" VerticalAlignment="Top" Height="24" HorizontalAlignment="Right" Width="142" RenderTransformOrigin="0.454,1.379" Background="#FF2F3439" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" FontFamily="Calibri" Foreground="#FFB7C3C8" BorderBrush="#FF444B4F"/>
-            <TextBox Height="24" Margin="0,52,195,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderBrush="#FF7C7777" Background="#FF636C70" SelectionBrush="#FFEE625A" FontFamily="Calibri" Padding="0,1,19,0" FontSize="16" TextAlignment="Right" HorizontalAlignment="Right" Width="156" Style="{DynamicResource RoundedTextBoxStyle}" Foreground="Black"/>
+            <Label Content="Gestion Devis à traiter" HorizontalAlignment="Left" Margin="62,78,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14"/>
 
-            <Label Content="Gestion Devis à traiter" HorizontalAlignment="Left" Margin="62,56,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14"/>
-            <Button Content="ENVOYER" Margin="16,363,0,0" VerticalAlignment="Top" Height="40" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
-            <Button Content="Aperçu du formulaire final" Margin="15,245,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" HorizontalAlignment="Left" Width="236" Foreground="#FFB7C3C8" FontFamily="Calibri" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Padding="1,1,1,3" BorderThickness="1"/>
-            <Button Content="Devis traiter" Margin="16,211,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
+            <Button Click="CalculTotalDevis_Click" Content="Calculer le prix total" Margin="15,130,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" HorizontalAlignment="Left" Width="236" Foreground="#FFB7C3C8" FontFamily="Calibri" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Padding="1,1,1,3" BorderThickness="1"/>
+            <Button Click="GetOutPrestaDevis_Click" Content="Retirer un Prestataire" Margin="15,164,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
+            <Button Click="ApercuDevis_Click" Content="Aperçu du formulaire final" Margin="15,244,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" HorizontalAlignment="Left" Width="236" Foreground="#FFB7C3C8" FontFamily="Calibri" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Padding="1,1,1,3" BorderThickness="1"/>
+            <Button Click="SendFinalDevis_Click" Content="ENVOYER" Margin="15,509,0,0" VerticalAlignment="Top" Height="40" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
+
+            <Button Click="GetWorkDevis_Click" Content="Devis à traiter" Margin="309,80,0,0" VerticalAlignment="Top" Height="35" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" HorizontalAlignment="Left" Width="209" Foreground="#FFB7C3C8" FontFamily="Calibri" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Padding="1,1,1,3" BorderThickness="1"/>
+            <Button Click="GetFinishDevis_Click" Content="Devis traiter" Margin="557,80,0,0" VerticalAlignment="Top" Height="35" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" HorizontalAlignment="Left" Width="207" Foreground="#FFB7C3C8" FontFamily="Calibri" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Padding="1,1,1,3" BorderThickness="1"/>
+            <Button Click="LoadAllDevis_Click" Content="Tous les Devis" Margin="804,80,0,0" VerticalAlignment="Top" Height="35" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" HorizontalAlignment="Left" Width="207" Foreground="#FFB7C3C8" FontFamily="Calibri" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Padding="1,1,1,3" BorderThickness="1"/>
+
         </Grid>
 
     </DockPanel>

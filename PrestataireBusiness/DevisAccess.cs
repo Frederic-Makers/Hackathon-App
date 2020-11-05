@@ -37,7 +37,7 @@ namespace DevisBusiness
                         DateTime Date = dbReader.GetDateTime(3);
                         string Email = dbReader.GetString(4);
                         string Exigence = dbReader.GetString(5);
-                        int Numero = dbReader.GetInt32(6);
+                        string Numero = dbReader.GetString(6);
                    
                         Business.Devis.Add(new Devis(Id, Nom, Prenom, Date, Email, Exigence, Numero));
                     }
@@ -67,7 +67,7 @@ namespace DevisBusiness
         }
         public static bool UpdateDevis(Devis d)
         {
-            string sql = "UPDATE Devis SET Nom=@nom, Prenom=@prenom, Date=@date, Email=@email, Exigence=@exigence, Numero=@numero" + 
+            string sql = "UPDATE Devis SET Nom=@nom, Prenom=@prenom, Date=@date, Email=@email, Exigence=@exigence, Numero=@numero " + 
                          "Where id=@id";
             using (MySqlCommand cmd = new MySqlCommand(sql, connection))
             {

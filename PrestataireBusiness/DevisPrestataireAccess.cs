@@ -18,23 +18,26 @@ namespace PrestataireBusiness
             String connString = "Server=remotemysql.com;Database=qgO0M364Or;userid=qgO0M364Or;Pwd=7Hyomgetg3";
             connection = new MySqlConnection(connString);
         }
-        public static void GetDevisPrestataire()
+        public static void GetDevisPrestataire(Devis d)
         {
-            String sql = "SELECT * FROM DevisPrestataire";
+
+            String sql = "SELECT * FROM DevisPrestataire WHERE devisId=@devisId ";
             using (MySqlCommand command = new MySqlCommand(sql, connection))
             {
+
                 command.Connection.Open();
+                command.Parameters.AddWithValue("@devisid", d.Id);
                 using (System.Data.Common.DbDataReader dbReader = command.ExecuteReader())
 
                 {
                     while (dbReader.Read())
                     {
-                        int id = dbReader.GetInt32(0);
-                        int devisid = dbReader.GetInt32(1);
-                        int prestataireid = dbReader.GetInt32(2);
-                        int prixid = dbReader.GetInt32(3);
+                        
+                        int devisid = dbReader.GetInt32(0);
+                        int prestataireid = dbReader.GetInt32(1);
+                        int prix = dbReader.GetInt32(2);
 
-                        Business.DevisPrestataire.Add(new DevisPrestataire(id, devisid, prestataireid, prixid));
+                        d.DevisPrestataires.Add(new DevisPrestataire(0, devisid, prestataireid, prix));
                     }
                 }
                 command.Connection.Close();
