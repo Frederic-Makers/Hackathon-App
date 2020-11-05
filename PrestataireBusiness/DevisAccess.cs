@@ -38,7 +38,8 @@ namespace DevisBusiness
                         string Email = dbReader.GetString(4);
                         string Exigence = dbReader.GetString(5);
                         string Numero = dbReader.GetString(6);
-                        Devis d = new Devis(Id, Nom, Prenom, Date, Email, Exigence, Numero);
+                        Boolean isTraite = dbReader.GetBoolean(7);
+                        Devis d = new Devis(Id, Nom, Prenom, Date, Email, Exigence, Numero, isTraite);
                         DevisPrestataireAccess.GetDevisPrestataire(d);
                         Business.Devis.Add(d);
                     }
