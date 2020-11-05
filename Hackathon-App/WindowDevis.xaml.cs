@@ -19,9 +19,11 @@ namespace Hackathon_App
     /// </summary>
     public partial class WindowDevis : Window
     {
-        public WindowDevis()
+        MainWindow mw;
+        public WindowDevis(MainWindow mw)
         {
             InitializeComponent();
+            this.mw = mw;
          
         }
 

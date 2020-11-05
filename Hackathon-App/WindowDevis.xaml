@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hackathon_App"
         mc:Ignorable="d"
-        Title="Devis Traiter" Height="522" Width="694.058" Background="#FF3C484D">
+        Title="Devis Traiter" Height="522" Width="694.058" Background="#FF3C484D" WindowStartupLocation="CenterScreen" Icon="img/logo.png">
     <DockPanel Margin="0,0,0,-4">
 
 

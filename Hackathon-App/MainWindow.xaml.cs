@@ -49,7 +49,7 @@ namespace Hackathon_App
             {
                 wa.modeEdit = true;
                 wa.Show();
-                wa.labelTitre.Content = "Editer le prestataire Id" + Business.p.Id;
+                wa.labelTitre.Content = "EDITER LE PRESTATAIRE [Id :" + Business.p.Id + "]";
                 wa.button2.Visibility = Visibility.Hidden;
                 wa.button1.Content = "Editer et fermer";
                 wa.Title = "Editer Prestataire";
@@ -75,6 +75,7 @@ namespace Hackathon_App
             Business.Prestataires.Clear();
             Listfiltre.Clear();
             PrestataireAcces.GetPrestataire();
+            MyfilterCategorie.Header = "_Tous les Catégories";
             Mygrid.ItemsSource = Business.Prestataires;
         }
 
@@ -83,6 +84,7 @@ namespace Hackathon_App
             Business.Prestataires.Clear();
             Listfiltre.Clear();
             PrestataireAcces.GetPrestataire();
+            MyfilterCategorie.Header = "_Tous les Catégories";
             Mygrid.ItemsSource = Business.Prestataires;
         }
 
@@ -114,36 +116,10 @@ namespace Hackathon_App
             }
         }
 
-        public void FILTERPresta_Click(object sender, RoutedEventArgs e)
-        {
-            if (MyfilterCategorie.Header.ToString() != "_Tous les Catégories")
-            {
-                foreach (var item in Business.Prestataires)
-                {
-                    if (item.Categorie != "")
-                    {
-                        try
-                        {
-                            String categorie = (item.Categorie);
-                            if (categorie == MyfilterCategorie.Header.ToString())
-                            {
-                                Listfiltre.Add(item);
-                            }
-                        }
-                        catch (Exception) { }
-                    }
-                }
-                Mygrid.ItemsSource = Listfiltre;
-            }
-            else
-            {
-                Mygrid.ItemsSource = Business.Prestataires;
-            }
-        }
-
         private void UnfinishedDevis_Click(object sender, RoutedEventArgs e)
         {
-
+            WindowDevis wd = new WindowDevis(this);
+            wd.ShowDialog();
         }
 
         private void finishedDevis_Click(object sender, RoutedEventArgs e)

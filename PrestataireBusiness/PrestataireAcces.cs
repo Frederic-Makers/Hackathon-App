@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Renci.SshNet.Messages;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -24,7 +25,12 @@ namespace PrestataireBusiness
             String sql = "SELECT * FROM Prestataire";
             using (MySqlCommand command = new MySqlCommand(sql, connection))
             {
-                command.Connection.Open();
+                try
+                {
+                    command.Connection.Open();
+                }
+                catch (MySqlException) { }
+                
                 using (System.Data.Common.DbDataReader dbReader = command.ExecuteReader())
 
                 {
