@@ -26,7 +26,7 @@
         </Menu>
 
         <Grid Background="#FF3C484D" Width="1120">
-            <Image Source="/img/logo marquises weeding 2 (1).png" IsEnabled="False" Height="459" Margin="265,114,10,0" VerticalAlignment="Top" RenderTransformOrigin="0.471,0.467" Opacity="0.2" Panel.ZIndex="3" />
+            <Image Source="4d129416-afc6-4d28-b356-13072263a513_200x200.png" IsEnabled="False" Height="228" Margin="474,225,254,0" VerticalAlignment="Top" RenderTransformOrigin="0.471,0.467" Opacity="0.2" Panel.ZIndex="2" />
             <Rectangle Fill="#FF546065" Margin="265,75,10,38" Stroke="#FF1F292E" RadiusY="5" RadiusX="5"/>
 
 

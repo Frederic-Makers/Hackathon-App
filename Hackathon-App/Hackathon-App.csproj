@@ -184,5 +184,8 @@
   <ItemGroup>
     <Resource Include="img\logo marquises weeding 2 %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="4d129416-afc6-4d28-b356-13072263a513_200x200.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
