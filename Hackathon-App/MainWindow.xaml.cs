@@ -153,5 +153,30 @@ namespace Hackathon_App
             EDITPresta.IsEnabled = true;
             Business.p = p;
         }
+
+
+        private void Mygrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Prestataire p = (Prestataire)this.Mygrid.SelectedItem;
+            EDITPresta.IsEnabled = true;
+            Business.p = p;
+
+            WindowAdd wa = new WindowAdd(this);
+            Prestataire p2 = Business.p;
+            wa.modeEdit = true;
+            wa.Show();
+            wa.labelTitre.Content = "Editer le prestataire Id" + Business.p.Id;
+            wa.button2.Visibility = Visibility.Hidden;
+            wa.button1.Content = "Editer et fermer";
+            wa.Title = "Editer Prestataire";
+            wa.Nom.Text = p2.Nom;
+            wa.Url.Text = p2.Url;
+            wa.Categorie.Text = p2.Categorie;
+            wa.Contact.Text = p2.Contact;
+            wa.Adresse.Text = p2.Adresse;
+            wa.Description.Text = p2.Description;
+            wa.Activation.IsChecked = p2.Activation;
+            wa.Prix.Text = p2.Prix;
+        }
     }
 }
