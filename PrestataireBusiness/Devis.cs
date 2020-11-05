@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace PrestataireBusiness
@@ -14,6 +15,11 @@ namespace PrestataireBusiness
         public String Exigence { get; set; }
         public String Numero { get; set; }
 
+        public int Total { 
+            get{
+                return this.DevisPrestataires.Sum(x => x.Prix);
+            } 
+        }
         public List<DevisPrestataire> DevisPrestataires { get; set; }
 
         public List<Prestataire> PrestatairesIndisponibles { get; set; }
