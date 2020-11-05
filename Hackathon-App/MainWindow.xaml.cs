@@ -33,7 +33,7 @@ namespace Hackathon_App
         private void ADDPresta_Click(object sender, RoutedEventArgs e)
         {
             WindowAdd wa = new WindowAdd(this);
-            wa.Show();
+            wa.ShowDialog();
             wa.modeEdit = false;
             wa.Title = "Ajouter un Prestataire";
         }
@@ -43,7 +43,7 @@ namespace Hackathon_App
             WindowAdd wa = new WindowAdd(this);
             Prestataire p = Business.p;
             wa.modeEdit = true;
-            wa.Show();
+            wa.ShowDialog();
             wa.labelTitre.Content = "Editer le prestataire Id" + Business.p.Id;
             wa.button2.Visibility = Visibility.Hidden;
             wa.button1.Content = "Editer et fermer";
@@ -164,7 +164,7 @@ namespace Hackathon_App
             WindowAdd wa = new WindowAdd(this);
             Prestataire p2 = Business.p;
             wa.modeEdit = true;
-            wa.Show();
+            wa.ShowDialog();
             wa.labelTitre.Content = "Editer le prestataire Id" + Business.p.Id;
             wa.button2.Visibility = Visibility.Hidden;
             wa.button1.Content = "Editer et fermer";
