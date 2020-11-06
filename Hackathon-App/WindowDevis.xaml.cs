@@ -94,7 +94,8 @@ namespace Hackathon_App
 
         private void ApercuDevis_Click(object sender, RoutedEventArgs e)
         {
-
+            Formulaire fw = new Formulaire(this);
+            fw.Show();
         }
 
         private void SendFinalDevis_Click(object sender, RoutedEventArgs e)

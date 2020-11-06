@@ -26,10 +26,12 @@ namespace Hackathon_App
             InitializeComponent();
             this.wd = wd;
             Devis d = Business.d;
-            Prix.Content = d.Total;
-            Nom.Content = d.Nom;
-            Email.Content = d.Email;
-            Id.Content = d.Id;
+            Prix.Content = "Prix TOTAL: " + d.Total;
+            Nom.Content = "Nom/Prénom : " + d.Nom;
+            Email.Content = "Email : " + d.Email;
+            Adresse.Content = "Adresse : NUKU-HIVA Taiohae";
+            Numero.Content = "Contact : " + d.Numero; 
+            Id.Content = "DEVIS N° : " + d.Id;
         }
     }
 }

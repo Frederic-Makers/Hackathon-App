@@ -50,8 +50,7 @@
         <Label HorizontalAlignment="Left" Margin="27,228,0,0" VerticalAlignment="Top" Width="78" Height="23" Content="Prénom :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
         <Label HorizontalAlignment="Left" Margin="27,112,0,0" VerticalAlignment="Top" Width="78" Height="24" Content="Date :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
         <Label VerticalAlignment="Top" Width="181" Height="30" FontFamily="Tahoma" Content="{Binding Date}" FontSize="18" Margin="75,106,577,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="5" BorderThickness="1" Background="#FF81E8FF"/>
-        <CheckBox Content="" HorizontalAlignment="Left" Margin="679,232,0,0" VerticalAlignment="Top"/>
-        <Rectangle HorizontalAlignment="Left" Height="337" RadiusY="5" RadiusX="5" Stroke="#FF292E30" VerticalAlignment="Top" Width="833"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="679,232,0,0" VerticalAlignment="Top" IsChecked="{Binding isTraite}"/>
 
     </Grid>
 

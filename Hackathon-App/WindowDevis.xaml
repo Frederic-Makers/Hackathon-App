@@ -25,7 +25,7 @@
         </Menu>
 
         <Grid Background="#FF3A513A" Width="1142">
-            <Image Source="4d129416-afc6-4d28-b356-13072263a513_200x200.png" IsEnabled="False" Height="138" Margin="62,0,934,122" VerticalAlignment="Bottom" RenderTransformOrigin="0.471,0.467" Panel.ZIndex="3" />
+            <Image Source="4d129416-afc6-4d28-b356-13072263a513_200x200.png" IsEnabled="False" Height="138" Margin="62,0,934,107" VerticalAlignment="Bottom" RenderTransformOrigin="0.471,0.467" Panel.ZIndex="3" />
             <Rectangle Fill="#FF546065" Margin="265,64,10,31" Stroke="#FF1F292E" RadiusY="5" RadiusX="5"/>
 
             <ListView x:Name="MyGridDevis" SelectionChanged="MyGridDevis_SelectionChanged" Margin="265,109,10,31" Background="#FF5C686D" BorderBrush="#FF1F292E" ScrollViewer.CanContentScroll="False" MouseDoubleClick="MyGridDevis_MouseDoubleClick" Panel.ZIndex="1" >
@@ -76,7 +76,7 @@
                             <Label HorizontalAlignment="Left" Margin="27,228,0,0" VerticalAlignment="Top" Width="78" Height="23" Content="Prénom :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
                             <Label HorizontalAlignment="Left" Margin="27,112,0,0" VerticalAlignment="Top" Width="78" Height="24" Content="Date :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
                             <Label VerticalAlignment="Top" Width="181" Height="30" FontFamily="Tahoma" Content="{Binding Date}" FontSize="18" Margin="75,106,577,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="5" BorderThickness="1" Background="#FF81E8FF"/>
-                            <CheckBox Content="" HorizontalAlignment="Left" Margin="679,232,0,0" VerticalAlignment="Top"/>
+                            <CheckBox Content="" HorizontalAlignment="Left" Margin="679,232,0,0" VerticalAlignment="Top" IsChecked="{Binding isTraite}"/>
                             <Rectangle HorizontalAlignment="Left" Height="337" RadiusY="5" RadiusX="5" Stroke="#FF292E30" VerticalAlignment="Top" Width="833"/>
 
                         </Grid>
@@ -88,10 +88,11 @@
             <Image Source="/img/FiltreLog.png" Height="29" Margin="0,80,34,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="33" />
 
             <Label Content="Gestion des Devis" HorizontalAlignment="Left" Margin="76,80,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14"/>
-            <Button x:Name="ApercuDevis" Click="ApercuDevis_Click" Content="Aperçu du formulaire final" Margin="15,223,0,0" VerticalAlignment="Top" Height="40" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" HorizontalAlignment="Left" Width="236" Foreground="#FFB7C3C8" FontFamily="Calibri" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Padding="1,1,1,3" BorderThickness="1"/>
+            <Button x:Name="ApercuDevis" Click="ApercuDevis_Click" Content="Aperçu du formulaire final" Margin="16,291,0,0" VerticalAlignment="Top" Height="40" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" HorizontalAlignment="Left" Width="236" Foreground="#FFB7C3C8" FontFamily="Calibri" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Padding="1,1,1,3" BorderThickness="1"/>
             <Button Click="SendFinalDevis_Click" Content="ENVOYER" Margin="15,509,0,0" VerticalAlignment="Top" Height="40" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
-            <Button Click="GetFinishDevis_Click" Content="Devis traiter" Margin="16,178,0,0" VerticalAlignment="Top" Height="40" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" HorizontalAlignment="Left" Width="236" Foreground="#FFB7C3C8" FontFamily="Calibri" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Padding="1,1,1,3" BorderThickness="1"/>
+            <Button Click="GetFinishDevis_Click" Content="Devis traiter" Margin="16,223,0,0" VerticalAlignment="Top" Height="40" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" HorizontalAlignment="Left" Width="236" Foreground="#FFB7C3C8" FontFamily="Calibri" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Padding="1,1,1,3" BorderThickness="1"/>
             <Button Click="LoadAllDevis_Click" Content="Tous les Devis" Margin="16,133,0,0" VerticalAlignment="Top" Height="40" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" HorizontalAlignment="Left" Width="236" Foreground="#FFB7C3C8" FontFamily="Calibri" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Padding="1,1,1,3" BorderThickness="1"/>
+            <Button Click="GetWorkDevis_Click" Content="Devis à traiter" Margin="16,178,0,0" VerticalAlignment="Top" Height="40" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" HorizontalAlignment="Left" Width="236" Foreground="#FFB7C3C8" FontFamily="Calibri" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Padding="1,1,1,3" BorderThickness="1"/>
 
         </Grid>
 

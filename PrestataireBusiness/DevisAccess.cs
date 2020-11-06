@@ -69,7 +69,7 @@ namespace DevisBusiness
         }
         public static bool UpdateDevis(Devis d)
         {
-            string sql = "UPDATE Devis SET Nom=@nom, Prenom=@prenom, Date=@date, Email=@email, Exigence=@exigence, Numero=@numero, isTraite=@istraite" + 
+            string sql = "UPDATE Devis SET Nom=@nom, Prenom=@prenom, Date=@date, Email=@email, Exigence=@exigence, Numero=@numero, isTraite=@isTraite " + 
                          "Where id=@id";
             using (MySqlCommand cmd = new MySqlCommand(sql, connection))
             {
@@ -82,7 +82,7 @@ namespace DevisBusiness
                 cmd.Parameters.AddWithValue("@email", d.Email);
                 cmd.Parameters.AddWithValue("@exigence", d.Exigence);
                 cmd.Parameters.AddWithValue("@numero", d.Numero);
-                cmd.Parameters.AddWithValue("@istraite", d.isTraite);
+                cmd.Parameters.AddWithValue("@isTraite", d.isTraite);
 
                 bool result = cmd.ExecuteNonQuery() == 1;
                 cmd.Connection.Close();
