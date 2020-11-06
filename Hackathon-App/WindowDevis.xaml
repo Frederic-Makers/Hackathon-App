@@ -28,7 +28,7 @@
             <Image Source="/img/logo.png" IsEnabled="False" Height="59" Margin="404,-17,400,0" VerticalAlignment="Top" RenderTransformOrigin="0.471,0.467" Opacity="0.1" />
             <Rectangle Fill="#FF546065" Margin="265,64,10,31" Stroke="#FF1F292E" RadiusY="5" RadiusX="5"/>
 
-            <ListView x:Name="MyGridDevis"  Margin="265,130,10,31" Background="#FF5C686D" BorderBrush="#FF1F292E" ScrollViewer.CanContentScroll="False" MouseDoubleClick="MyGridDevis_MouseDoubleClick" >
+            <ListView x:Name="MyGridDevis"  Margin="265,130,10,31" Background="#FF5C686D" BorderBrush="#FF1F292E" ScrollViewer.CanContentScroll="False" MouseDoubleClick="MyGridDevis_MouseDoubleClick" Panel.ZIndex="1" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -43,7 +43,7 @@
                             <Label HorizontalAlignment="Left" Margin="581,52,0,0" VerticalAlignment="Top" Width="209" Height="30" Content="{Binding Email}" FontWeight="Bold" Background="#FF81E8FF"/>
                             <TextBlock HorizontalAlignment="Left" Margin="348,52,0,0" VerticalAlignment="Top" Width="134" Height="30" Text="{Binding Numero}" TextWrapping="Wrap" FontWeight="Bold" Background="#FF81E8FF"/>
                             <TextBlock HorizontalAlignment="Left" Margin="304,96,0,0" VerticalAlignment="Top" Width="178" Height="156" Text="{Binding Exigence}" TextWrapping="Wrap" FontWeight="Bold" Background="#FF81E8FF"/>
-                            <Label HorizontalAlignment="Left" Margin="304,273,0,0" VerticalAlignment="Top" Width="178" Height="30" Content="{Binding Prix}" FontWeight="Bold" Background="#FF81E8FF"/>
+                            <Label HorizontalAlignment="Left" Margin="304,273,0,0" VerticalAlignment="Top" Width="178" Height="30" Content="{Binding Total}" FontWeight="Bold" Background="#FF81E8FF"/>
                             <Label HorizontalAlignment="Left" Margin="221,52,0,0" VerticalAlignment="Top" Width="115" Height="30" Content="Numéros portable :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF7E8E8"/>
                             <Label HorizontalAlignment="Left" Margin="511,52,0,0" VerticalAlignment="Top" Width="65" Height="30" Content="Email :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
                             <Label HorizontalAlignment="Left" Margin="221,141,0,0" VerticalAlignment="Top" Width="78" Height="30" Content="Exigences :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
@@ -52,11 +52,24 @@
                             <Label HorizontalAlignment="Left" Margin="102,61,0,0" VerticalAlignment="Top" Width="101" Height="30" Content="{Binding Id}" FontWeight="Bold" Background="#FF34A67D"/>
                             <Label HorizontalAlignment="Left" Margin="26,62,0,0" VerticalAlignment="Top" Width="65" Height="30" Content="N° ID :" FontWeight="Bold" FontSize="14" FontStyle="Italic" Foreground="#FFF3E5E5"/>
                             <Label HorizontalAlignment="Left" Margin="26,14,0,0" VerticalAlignment="Top" Width="193" Height="43" Content="DEVIS" FontWeight="Bold" FontSize="24" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-                            <ListBox x:Name="MyCalculSommeDevis"  HorizontalAlignment="Left" Margin="581,96,0,0" VerticalAlignment="Top" Width="209" Height="107" ItemsSource="{Binding DevisPrestataires}" FontWeight="Bold" Background="#FF81E8FF">
-                                <ListBox.ItemTemplate>
+                            <ListView x:Name="MyCalculSommeDevis"  HorizontalAlignment="Left" Margin="581,96,0,0" VerticalAlignment="Top" Width="209" Height="107" ItemsSource="{Binding DevisPrestataires}" FontWeight="Bold" Background="#FF81E8FF" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Panel.ZIndex="2">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="24*"/>
+                                                <RowDefinition Height="199*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="713*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label VerticalAlignment="Top" Height="23" Content="{Binding Nom}" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="Black" HorizontalAlignment="Left" Width="127"/>
+                                            <Label Margin="127,0,10,0" VerticalAlignment="Top" Height="23" Content="{Binding Prix}" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="Black" FlowDirection="RightToLeft"/>
 
-                                </ListBox.ItemTemplate>
-                            </ListBox>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
                             <Label HorizontalAlignment="Left" Margin="498,123,0,0" VerticalAlignment="Top" Width="78" Height="53" Content="Prestataires&#xD;&#xA;choisi :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
                             <ListBox x:Name="MyListPrestaIndispo"  HorizontalAlignment="Left" Margin="581,217,0,0" VerticalAlignment="Top" Width="209" Height="86" ItemsSource="{Binding PrestatairesIndisponibles}" FontWeight="Bold" Background="#FF81E8FF"/>
                             <Label HorizontalAlignment="Left" Margin="492,228,0,0" VerticalAlignment="Top" Width="84" Height="53" Content="Prestataires&#xA;indisponible :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
