@@ -24,8 +24,9 @@ namespace Hackathon_App
         public WindowDevis(MainWindow mw)
         {
             InitializeComponent();
+            
             this.mw = mw;
-         
+            ApercuDevis.IsEnabled = false;
         }
 
         private void LoadAllDevis_Click(object sender, RoutedEventArgs e)
@@ -81,6 +82,8 @@ namespace Hackathon_App
             WindowEditDevis wd = new WindowEditDevis(this);
             Devis d2 = Business.d;
 
+            if (Business.d != null)
+            {
             wd.Show();
             wd.labelTitre.Content = "EDITER LE DEVIS N° " + Business.d.Id;
 
@@ -93,9 +96,20 @@ namespace Hackathon_App
 
 
             wd.LoadPrestataireSelected.ItemsSource = d.DevisPrestataires;
+            }
+            else
+            {
+                MessageBox.Show("Ne pas double cliquer dans 'Prestataire Choisi'");
+            }
+
 
         }
 
-
+        private void MyGridDevis_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Devis d = (Devis)this.MyGridDevis.SelectedItem;
+            ApercuDevis.IsEnabled = true;
+            Business.d = d;
+        }
     }
 }

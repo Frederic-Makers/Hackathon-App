@@ -28,7 +28,7 @@
             <Image Source="4d129416-afc6-4d28-b356-13072263a513_200x200.png" IsEnabled="False" Height="138" Margin="62,0,934,122" VerticalAlignment="Bottom" RenderTransformOrigin="0.471,0.467" Panel.ZIndex="3" />
             <Rectangle Fill="#FF546065" Margin="265,64,10,31" Stroke="#FF1F292E" RadiusY="5" RadiusX="5"/>
 
-            <ListView x:Name="MyGridDevis"  Margin="265,109,10,31" Background="#FF5C686D" BorderBrush="#FF1F292E" ScrollViewer.CanContentScroll="False" MouseDoubleClick="MyGridDevis_MouseDoubleClick" Panel.ZIndex="1" >
+            <ListView x:Name="MyGridDevis" SelectionChanged="MyGridDevis_SelectionChanged" Margin="265,109,10,31" Background="#FF5C686D" BorderBrush="#FF1F292E" ScrollViewer.CanContentScroll="False" MouseDoubleClick="MyGridDevis_MouseDoubleClick" Panel.ZIndex="1" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
