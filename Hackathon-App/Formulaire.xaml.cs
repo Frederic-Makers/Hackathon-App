@@ -1,6 +1,7 @@
 ﻿using PrestataireBusiness;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Xps.Packaging;
 
 namespace Hackathon_App
 {
@@ -39,6 +41,16 @@ namespace Hackathon_App
         private void Print_Click(object sender, RoutedEventArgs e)
         {
 
+            PrintDialog print = new PrintDialog();
+            print.PageRangeSelection = PageRangeSelection.CurrentPage;
+           
+            print.UserPageRangeEnabled = true;
+           
+            Nullable<Boolean> isprint = print.ShowDialog();
+            if (isprint == true)
+            {
+                print.PrintVisual(FormulairePrint, "Test print job");
+            }
         }
     }
 }
