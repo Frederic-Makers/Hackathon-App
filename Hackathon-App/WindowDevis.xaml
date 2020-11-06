@@ -52,7 +52,7 @@
                             <Label HorizontalAlignment="Left" Margin="102,61,0,0" VerticalAlignment="Top" Width="101" Height="30" Content="{Binding Id}" FontWeight="Bold" Background="#FF34A67D"/>
                             <Label HorizontalAlignment="Left" Margin="26,62,0,0" VerticalAlignment="Top" Width="65" Height="30" Content="N° ID :" FontWeight="Bold" FontSize="14" FontStyle="Italic" Foreground="#FFF3E5E5"/>
                             <Label HorizontalAlignment="Left" Margin="26,14,0,0" VerticalAlignment="Top" Width="193" Height="43" Content="DEVIS" FontWeight="Bold" FontSize="24" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-                            <ListView x:Name="MyCalculSommeDevis"  HorizontalAlignment="Left" Margin="581,96,0,0" VerticalAlignment="Top" Width="209" Height="116" ItemsSource="{Binding DevisPrestataires}" FontWeight="Bold" Background="#FF81E8FF" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Panel.ZIndex="2">
+                            <ListView x:Name="MyCalculSommeDevis"  HorizontalAlignment="Left" Margin="581,96,0,0" VerticalAlignment="Top" Width="209" Height="116" ItemsSource="{Binding DevisPrestataires}" FontWeight="Bold" Background="#FF2F3439" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Panel.ZIndex="2">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <Grid>

@@ -4,53 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hackathon_App.UI"
-             mc:Ignorable="d" Height="446" Width="150">
-    <Grid x:Name="scroll" Background="#FF32443F" HorizontalAlignment="Left" Width="833" Margin="0,0,-683,0">
+             mc:Ignorable="d" Height="247" Width="419.333">
+    <Grid x:Name="scroll" Background="#FFA0C1B8" HorizontalAlignment="Left" Width="419" Height="247">
         <Grid.RowDefinitions>
-            <RowDefinition Height="337*"/>
-            <RowDefinition Height="109*"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="713*" />
         </Grid.ColumnDefinitions>
-        <Label VerticalAlignment="Top" Width="229" Height="49" FontFamily="Tahoma" Content="{Binding Nom}" FontSize="18" Margin="27,174,577,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="5" BorderThickness="1" Background="#FF81E8FF"/>
-        <Label HorizontalAlignment="Left" Margin="581,52,0,0" VerticalAlignment="Top" Width="209" Height="30" Content="{Binding Email}" FontWeight="Bold" Background="#FF81E8FF"/>
-        <TextBlock HorizontalAlignment="Left" Margin="348,52,0,0" VerticalAlignment="Top" Width="134" Height="30" Text="{Binding Numero}" TextWrapping="Wrap" FontWeight="Bold" Background="#FF81E8FF"/>
-        <TextBlock HorizontalAlignment="Left" Margin="304,123,0,0" VerticalAlignment="Top" Width="178" Height="180" Text="{Binding Exigence}" TextWrapping="Wrap" FontWeight="Bold" Background="#FF81E8FF"/>
-        <Label HorizontalAlignment="Left" Margin="581,273,0,0" VerticalAlignment="Top" Width="209" Height="30" Content="{Binding Total}" FontWeight="Bold" Background="#FF81E8FF"/>
-        <Label HorizontalAlignment="Left" Margin="221,52,0,0" VerticalAlignment="Top" Width="115" Height="30" Content="Numéros portable :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF7E8E8"/>
-        <Label HorizontalAlignment="Left" Margin="511,52,0,0" VerticalAlignment="Top" Width="65" Height="30" Content="Email :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-        <Label HorizontalAlignment="Left" Margin="304,93,0,0" VerticalAlignment="Top" Width="69" Height="30" Content="Exigences :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
-        <Label HorizontalAlignment="Left" Margin="498,273,0,0" VerticalAlignment="Top" Width="70" Height="30" Content="Prix Total :" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-        <Label VerticalAlignment="Top" Width="229" Height="46" FontFamily="Tahoma" Content="{Binding Prenom}" FontSize="18" Margin="27,257,577,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="5" BorderThickness="1" Background="#FF81E8FF"/>
-        <Label HorizontalAlignment="Left" Margin="102,61,0,0" VerticalAlignment="Top" Width="101" Height="30" Content="{Binding Id}" FontWeight="Bold" Background="#FF34A67D"/>
-        <Label HorizontalAlignment="Left" Margin="26,62,0,0" VerticalAlignment="Top" Width="65" Height="30" Content="N° ID :" FontWeight="Bold" FontSize="14" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-        <Label HorizontalAlignment="Left" Margin="26,14,0,0" VerticalAlignment="Top" Width="193" Height="43" Content="DEVIS" FontWeight="Bold" FontSize="24" FontStyle="Italic" Foreground="#FFF3E5E5"/>
-        <ListView x:Name="MyCalculSommeDevis"  HorizontalAlignment="Left" Margin="581,96,0,0" VerticalAlignment="Top" Width="209" Height="116" ItemsSource="{Binding DevisPrestataires}" FontWeight="Bold" Background="#FF81E8FF" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Panel.ZIndex="2">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="24*"/>
-                            <RowDefinition Height="199*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="713*" />
-                        </Grid.ColumnDefinitions>
-                        <Label VerticalAlignment="Top" Height="23" Content="{Binding Nom}" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="Black" HorizontalAlignment="Left" Width="127"/>
-                        <Label Margin="127,0,10,0" VerticalAlignment="Top" Height="23" Content="{Binding Prix}" FontWeight="Bold" FontSize="11" FontStyle="Italic" Foreground="Black" FlowDirection="RightToLeft"/>
-
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Label HorizontalAlignment="Left" Margin="498,123,0,0" VerticalAlignment="Top" Width="78" Height="53" Content="Prestataires&#xD;&#xA;choisi :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
-        <Label HorizontalAlignment="Left" Margin="615,228,0,0" VerticalAlignment="Top" Width="84" Height="30" Content="Traité :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
-        <Label HorizontalAlignment="Left" Margin="27,145,0,0" VerticalAlignment="Top" Width="78" Height="24" Content="Nom :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
-        <Label HorizontalAlignment="Left" Margin="27,228,0,0" VerticalAlignment="Top" Width="78" Height="23" Content="Prénom :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
-        <Label HorizontalAlignment="Left" Margin="27,112,0,0" VerticalAlignment="Top" Width="78" Height="24" Content="Date :" FontWeight="Bold" FontSize="11" FontStyle="Italic" ScrollViewer.CanContentScroll="True" Foreground="#FFF3E5E5"/>
-        <Label VerticalAlignment="Top" Width="181" Height="30" FontFamily="Tahoma" Content="{Binding Date}" FontSize="18" Margin="75,106,577,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Padding="5" BorderThickness="1" Background="#FF81E8FF"/>
-        <CheckBox Content="" HorizontalAlignment="Left" Margin="679,232,0,0" VerticalAlignment="Top" IsChecked="{Binding isTraite}"/>
+        <Label VerticalAlignment="Top" Height="14" Content="{Binding Prix}" FontWeight="Bold" Background="White" FontSize="7" Padding="15,1,14,1" FlowDirection="RightToLeft" Margin="255,0,0,0"/>
+        <Label VerticalAlignment="Top" Width="245" Height="16" FontFamily="Tahoma" Content="{Binding Nom}" FontSize="7" HorizontalAlignment="Left" Padding="13,1,5,1" BorderThickness="1" Background="White" Margin="-1,-1,0,0"/>
 
     </Grid>
 

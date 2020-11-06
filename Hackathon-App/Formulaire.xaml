@@ -6,28 +6,58 @@
         xmlns:local="clr-namespace:Hackathon_App"
         mc:Ignorable="d"
         Title="Formulaire" Height="652" Width="482.5" ResizeMode="NoResize">
-    <Grid>
-        <Image Source="/img/logo marquises weeding 2 (1).png" Margin="0,58,42,0" HorizontalAlignment="Right" Width="207" Height="126" VerticalAlignment="Top" />
+    <DockPanel>
+        <Grid x:Name="FormulairePrint">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="261*"/>
+                <RowDefinition Height="362*"/>
+            </Grid.RowDefinitions>
+            <Image Source="/img/logo marquises weeding 2 (1).png" Margin="0,58,42,0" HorizontalAlignment="Right" Width="207" Height="126" VerticalAlignment="Top" />
 
-        <Rectangle Fill="#FFD6D6D6" Height="2" Margin="0,41,0,0" VerticalAlignment="Top"/>
-        <Label Content="FORMULAIRE DE DEVIS" Margin="139,1,139,0" VerticalAlignment="Top" FontSize="16" Foreground="#FF747474" HorizontalAlignment="Center" Background="{x:Null}"/>
-        <Rectangle Height="23" Margin="356,10,10,0" VerticalAlignment="Top" Stroke="Black" RadiusY="4.5" RadiusX="4.5" Panel.ZIndex="1"/>
-        <Label x:Name="Id"  Height="13" Margin="357,14,0,0" Content="DEVIS CLIENT N° :" VerticalAlignment="Top" FontFamily="Calibri" BorderBrush="{x:Null}" FontSize="10" Panel.ZIndex="8" Background="{x:Null}" Padding="5,0" HorizontalAlignment="Left" Width="101"/>
-        <Rectangle Height="72" Margin="10,105,300,0" VerticalAlignment="Top" Stroke="Black" RadiusY="4.5" RadiusX="4.5" Panel.ZIndex="1"/>
-        <Rectangle Height="242" Margin="10,269,10,0" VerticalAlignment="Top" Stroke="Black" RadiusY="4.5" RadiusX="4.5" Panel.ZIndex="1"/>
-        <Rectangle Height="64" Margin="268,200,10,0" VerticalAlignment="Top" Stroke="Black" RadiusY="4.5" RadiusX="4.5" Panel.ZIndex="1"/>
-        <Rectangle Height="38" Margin="332,532,10,0" VerticalAlignment="Top" Stroke="Black" RadiusY="4.5" RadiusX="4.5" Panel.ZIndex="1"/>
-        <Label Content="Société: Marquises Wedding " HorizontalAlignment="Left" Margin="17,112,0,0" VerticalAlignment="Top" Width="150" Panel.ZIndex="2" FontSize="7" Height="12" Padding="5,0,0,0"/>
-        <Label Content="Email: marquiseswedding@gmail.com" HorizontalAlignment="Left" Margin="17,128,0,0" VerticalAlignment="Top" Width="150" Panel.ZIndex="2" FontSize="7" Height="12" Padding="5,0,0,0"/>
-        <Label Content="Tel: 40 920 952" HorizontalAlignment="Left" Margin="17,160,0,0" VerticalAlignment="Top" Width="150" Panel.ZIndex="2" FontSize="7" Height="12" Padding="5,0,0,0"/>
-        <Label Content="Adresse: Marquise NukuHiva Mairie" HorizontalAlignment="Left" Margin="17,144,0,0" VerticalAlignment="Top" Width="150" Panel.ZIndex="2" FontSize="7" Height="12" Padding="5,0,0,0"/>
-        <Rectangle Fill="#FFD6D6D6" Height="2" Margin="0,520,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Nom"  Content="Nom/Prénom:  " HorizontalAlignment="Left" Margin="274,203,0,0" VerticalAlignment="Top" Width="184" Panel.ZIndex="2" FontSize="7" Height="12" Padding="5,0,0,0"/>
-        <Label x:Name="Email"  Content="Email: " HorizontalAlignment="Left" Margin="274,219,0,0" VerticalAlignment="Top" Width="184" Panel.ZIndex="2" FontSize="7" Height="12" Padding="5,0,0,0" RenderTransformOrigin="0.5,0.5"/>
-        <Label x:Name="Numero"  Content="Contact: " HorizontalAlignment="Left" Margin="274,251,0,0" VerticalAlignment="Top" Width="184" Panel.ZIndex="2" FontSize="7" Height="12" Padding="5,0,0,0"/>
-        <Label x:Name="Adresse" Content="Adresse: " HorizontalAlignment="Left" Margin="274,235,0,0" VerticalAlignment="Top" Width="184" Panel.ZIndex="2" FontSize="7" Height="12" Padding="5,0,0,0"/>
-        <Label x:Name="Prix"  Content="Prix Total : " HorizontalAlignment="Left" Margin="332,540,0,0" VerticalAlignment="Top" Width="106" Panel.ZIndex="2" FontSize="11" Height="21" Padding="5,0,0,0"/>
+            <Rectangle Fill="#FFD6D6D6" Height="2" Margin="0,41,0,0" VerticalAlignment="Top"/>
+            <Label Content="FORMULAIRE DE DEVIS" Margin="150,1,150,0" VerticalAlignment="Top" FontSize="16" Foreground="#FF747474" HorizontalAlignment="Center" Background="{x:Null}"/>
+            <Rectangle Height="23" Margin="356,10,10,0" VerticalAlignment="Top" Stroke="Black" RadiusY="4.5" RadiusX="4.5" Panel.ZIndex="1"/>
+            <Label x:Name="Id"  Height="13" Margin="357,14,0,0" Content="DEVIS CLIENT N° :" VerticalAlignment="Top" FontFamily="Calibri" BorderBrush="{x:Null}" FontSize="10" Panel.ZIndex="8" Background="{x:Null}" Padding="5,0" HorizontalAlignment="Left" Width="101"/>
+            <Rectangle Height="72" Margin="10,105,300,0" VerticalAlignment="Top" Stroke="Black" RadiusY="4.5" RadiusX="4.5" Panel.ZIndex="1"/>
+            <Rectangle Height="242" Margin="10,8.333,10,0" VerticalAlignment="Top" Stroke="Black" RadiusY="4.5" RadiusX="4.5" Panel.ZIndex="1" Grid.Row="1"/>
+            <Rectangle Height="64" Margin="268,200,10,0" VerticalAlignment="Top" Stroke="Black" RadiusY="4.5" RadiusX="4.5" Panel.ZIndex="1" Grid.RowSpan="2"/>
+            <Rectangle Height="38" Margin="332,271.333,10,0" VerticalAlignment="Top" Stroke="Black" RadiusY="4.5" RadiusX="4.5" Panel.ZIndex="1" Grid.Row="1"/>
+            <Label Content="Société: Marquises Wedding " HorizontalAlignment="Left" Margin="17,112,0,0" VerticalAlignment="Top" Width="150" Panel.ZIndex="2" FontSize="7" Height="12" Padding="5,0,0,0"/>
+            <Label Content="Email: marquiseswedding@gmail.com" HorizontalAlignment="Left" Margin="17,128,0,0" VerticalAlignment="Top" Width="150" Panel.ZIndex="2" FontSize="7" Height="12" Padding="5,0,0,0"/>
+            <Label Content="Tel: 40 920 952" HorizontalAlignment="Left" Margin="17,160,0,0" VerticalAlignment="Top" Width="150" Panel.ZIndex="2" FontSize="7" Height="12" Padding="5,0,0,0"/>
+            <Label Content="Adresse: Marquise NukuHiva Mairie" HorizontalAlignment="Left" Margin="17,144,0,0" VerticalAlignment="Top" Width="150" Panel.ZIndex="2" FontSize="7" Height="12" Padding="5,0,0,0"/>
+            <Rectangle Fill="#FFD6D6D6" Height="2" Margin="0,259.333,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+            <Label x:Name="Nom"  Content="Nom/Prénom:  " HorizontalAlignment="Left" Margin="274,203,0,0" VerticalAlignment="Top" Width="184" Panel.ZIndex="2" FontSize="7" Height="12" Padding="5,0,0,0"/>
+            <Label x:Name="Email"  Content="Email: " HorizontalAlignment="Left" Margin="274,219,0,0" VerticalAlignment="Top" Width="184" Panel.ZIndex="2" FontSize="7" Height="12" Padding="5,0,0,0" RenderTransformOrigin="0.5,0.5"/>
+            <Label x:Name="Numero"  Content="Contact: " HorizontalAlignment="Left" Margin="274,251,0,0" VerticalAlignment="Top" Width="184" Panel.ZIndex="2" FontSize="7" Height="12" Padding="5,0,0,0" Grid.RowSpan="2"/>
+            <Label x:Name="Adresse" Content="Adresse: " HorizontalAlignment="Left" Margin="274,235,0,0" VerticalAlignment="Top" Width="184" Panel.ZIndex="2" FontSize="7" Height="12" Padding="5,0,0,0"/>
+            <Label x:Name="Prix"  Content="Prix Total : " HorizontalAlignment="Left" Margin="332,279.333,0,0" VerticalAlignment="Top" Width="106" Panel.ZIndex="2" FontSize="11" Height="21" Padding="5,0,0,0" Grid.Row="1"/>
+            <ListView x:Name="MyListPresta"  Margin="10,26,10,112" Grid.Row="1" Panel.ZIndex="1000" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="713*" />
+                            </Grid.ColumnDefinitions>
+                            <Label VerticalAlignment="Top" Height="14" Content="{Binding Prix}" FontWeight="Bold" Background="White" FontSize="7" Padding="15,1,14,1" FlowDirection="RightToLeft" Margin="255,0,0,0"/>
+                            <Label VerticalAlignment="Top" Width="245" Height="16" FontFamily="Tahoma" Content="{Binding Nom}" FontSize="7" HorizontalAlignment="Left" Padding="13,1,5,1" BorderThickness="1" Background="White" Margin="-1,-1,0,0"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Content="Nom" HorizontalAlignment="Left" Margin="32,8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="18" FontSize="10" Panel.ZIndex="10" Padding="5,1,5,5"/>
+            <Label Content="Prix" HorizontalAlignment="Left" Margin="280,8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="90" Height="18" FontSize="10" Panel.ZIndex="10" Padding="5,1,5,5"/>
+            <Image Source="/img/4d129416-afc6-4d28-b356-13072263a513_200x200.png" Margin="-11,51,213,0" Panel.ZIndex="-2" Opacity="0.05" />
+
+        </Grid>
+        <Grid>
+            <Button Click="Print_Click" Content="IMPRIMER" HorizontalAlignment="Left" Margin="-442,558,0,0" VerticalAlignment="Top" Width="132" Panel.ZIndex="1000" Height="38" Style="{DynamicResource RoundedButtonStyle}" Background="#FF2F3439" FontWeight="Bold" FontFamily="Calibri" FontSize="16" Foreground="#FFB7C3C8"/>
+        </Grid>
+    </DockPanel>
 
 
-    </Grid>
 </Window>

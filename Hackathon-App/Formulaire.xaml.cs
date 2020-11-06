@@ -32,6 +32,13 @@ namespace Hackathon_App
             Adresse.Content = "Adresse : NUKU-HIVA Taiohae";
             Numero.Content = "Contact : " + d.Numero; 
             Id.Content = "DEVIS N° : " + d.Id;
+
+            MyListPresta.ItemsSource = d.DevisPrestataires;
+        }
+
+        private void Print_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
