@@ -104,8 +104,18 @@ namespace Hackathon_App
 
         private void ApercuDevis_Click(object sender, RoutedEventArgs e)
         {
+            if (Business.d.isTraite == true)
+            {
             Formulaire fw = new Formulaire(this);
             fw.Show();
+            }
+            else
+            {
+                ApercuDevis.IsEnabled = true;
+                MessageBox.Show("Veillez selectionné un devis traité!");
+            }
+
+
         }
 
         private void SendFinalDevis_Click(object sender, RoutedEventArgs e)
