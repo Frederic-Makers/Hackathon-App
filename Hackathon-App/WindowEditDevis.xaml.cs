@@ -40,6 +40,7 @@ namespace Hackathon_App
             d.Email = Email.Text;
             d.Exigence = Exigence.Text;
             d.Numero = Numero.Text;
+            d.isTraite = isTraite.IsEnabled;
 
             if (DevisBusiness.DevisAccess.UpdateDevis(d))
             {

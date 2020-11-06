@@ -31,7 +31,7 @@ namespace PrestataireBusiness
             
         
         }
-        public Devis(int id, String nom, String prenom, DateTime date, String email, String exigence, String numero) : this()
+        public Devis(int id, String nom, String prenom, DateTime date, String email, String exigence, String numero, Boolean isTraite) : this()
         {
             this.Id = id;
             this.Nom = nom;
@@ -40,7 +40,7 @@ namespace PrestataireBusiness
             this.Email = email;
             this.Exigence = exigence;
             this.Numero = numero;
-            this.isTraite = false;
+            this.isTraite = isTraite;
         }
 
         //public List<Prestataire> GetPrestatairesDevis (DevisPrestataire dv)
