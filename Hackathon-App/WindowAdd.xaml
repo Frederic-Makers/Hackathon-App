@@ -44,6 +44,7 @@
             <CheckBox x:Name="Activation" Grid.ColumnSpan="2" Content="Activé" Margin="391,472,-10,0" Height="15" VerticalAlignment="Top" IsChecked="False" Foreground="#FFB7C3C8" FontWeight="Bold"/>
             <Label Content="Prix en franc (fcp)" HorizontalAlignment="Left" Height="25" Margin="272,436,0,0" VerticalAlignment="Top" Width="114" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
             <TextBox x:Name="Prix" Text="" HorizontalAlignment="Left" Height="25" Margin="391,436,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}" Background="#7FDDDDDD" FlowDirection="RightToLeft" Padding="5,3,0,0" Foreground="#FF252526"/>
+            <Image Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="83" Margin="431,19,0,0" VerticalAlignment="Top" Width="86" Source="4d129416-afc6-4d28-b356-13072263a513_200x200.png" RenderTransformOrigin="0.486,0.557"/>
 
         </Grid>
     </DockPanel>
