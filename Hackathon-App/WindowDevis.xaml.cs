@@ -33,8 +33,9 @@ namespace Hackathon_App
         {
 
             DevisBusiness.DevisAccess.GetDevis();
-            MyGridDevis.ItemsSource = Business.Devis;
-
+            Business.AllDevis = Business.Devis;
+            MyGridDevis.ItemsSource = Business.AllDevis;
+            //MyGridDevis.ItemsSource = Business.Devis;
 
         }
 
@@ -44,11 +45,20 @@ namespace Hackathon_App
             MyGridDevis.ItemsSource = Business.Devis;
         }
 
+        private void AllDevis_Click(object sender, RoutedEventArgs e)
+        {
+            Business.AllDevis = Business.Devis;
+            Business.DevisWork.Clear();
+            Business.DevisFinish.Clear();
+            MyGridDevis.ItemsSource = Business.AllDevis;
+        }
+
         private void GetWorkDevis_Click(object sender, RoutedEventArgs e)
         {
-            DevisBusiness.DevisAccess.GetDevis();
+            //DevisBusiness.DevisAccess.GetDevis();
+            
 
-            foreach (var item in Business.Devis)
+            foreach (var item in Business.AllDevis)
             {
                 if (item.isTraite != true)
                 {
@@ -63,16 +73,16 @@ namespace Hackathon_App
                     catch (Exception) { }
                 }
             }
-            Business.Devis.Clear();
+                   
             Business.DevisFinish.Clear();
             MyGridDevis.ItemsSource = Business.DevisWork;
         }
 
         private void GetFinishDevis_Click(object sender, RoutedEventArgs e)
         {
-            DevisBusiness.DevisAccess.GetDevis();
+            //DevisBusiness.DevisAccess.GetDevis();
 
-            foreach (var item in Business.Devis)
+            foreach (var item in Business.AllDevis)
             {
                 if (item.isTraite != false)
                 {
@@ -87,7 +97,7 @@ namespace Hackathon_App
                     catch (Exception) { }
                 }
             }
-            Business.Devis.Clear();
+            
             Business.DevisWork.Clear();
             MyGridDevis.ItemsSource = Business.DevisFinish;
         }
@@ -140,5 +150,7 @@ namespace Hackathon_App
             ApercuDevis.IsEnabled = true;
             Business.d = d;
         }
+
+        
     }
 }

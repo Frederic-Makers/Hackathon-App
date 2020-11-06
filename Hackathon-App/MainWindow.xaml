@@ -87,8 +87,7 @@
                     <MenuItem Click="Eleveur_Click" Header="_Eleveur" Foreground="#FFB7C3C8" />
                 </MenuItem>
             </Menu>
-            <Button x:Name="UnfinishedDevis" Click="UnfinishedDevis_Click"  Content="Devis non-traiter" Margin="16,283,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
-            <Button x:Name="finishedDevis" Click="finishedDevis_Click" Content="Devis traiter" Margin="15,317,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
+            <Button x:Name="UnfinishedDevis" Click="UnfinishedDevis_Click"  Content="Gérer les Devis Clients" Margin="16,283,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.623,2.471" Background="#FF2F3439" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="237" FontFamily="Calibri" Style="{DynamicResource RoundedButtonStyle}" BorderBrush="#FF444B4F" Foreground="#FFB7C3C8" Padding="1,1,1,3"/>
 
             <Label Content="Gestion Prestataire" HorizontalAlignment="Left" Margin="79,83,0,0" VerticalAlignment="Top" Foreground="White"/>
             <Label Content="Gestion Devis" HorizontalAlignment="Left" Margin="94,252,0,0" VerticalAlignment="Top" Foreground="White"/>

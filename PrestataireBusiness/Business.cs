@@ -7,6 +7,7 @@ namespace PrestataireBusiness
     {
         public static ObservableCollection<Prestataire> Prestataires { get; set; }
         public static ObservableCollection<Devis> Devis { get; set; }
+        public static ObservableCollection<Devis> AllDevis { get; set; }
         public static ObservableCollection<Devis> DevisWork { get; set; }
         public static ObservableCollection<Devis> DevisFinish { get; set; }
         public static ObservableCollection<DevisPrestataire> DevisPrestataire { get; set; }
@@ -17,6 +18,7 @@ namespace PrestataireBusiness
         {
             Prestataires = new ObservableCollection<Prestataire>();
             Devis = new ObservableCollection<Devis>();
+            AllDevis = new ObservableCollection<Devis>();
             DevisWork = new ObservableCollection<Devis>();
             DevisFinish = new ObservableCollection<Devis>();
             DevisPrestataire = new ObservableCollection<DevisPrestataire>();

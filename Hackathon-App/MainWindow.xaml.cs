@@ -120,12 +120,7 @@ namespace Hackathon_App
         {
             WindowDevis wd = new WindowDevis(this);
             wd.ShowDialog();
-        }
-
-        private void finishedDevis_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        } 
 
         private void NEW_Click(object sender, RoutedEventArgs e)
         {
