@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrestataireBusiness;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,16 @@ namespace Hackathon_App
     /// </summary>
     public partial class Formulaire : Window
     {
-        public Formulaire()
+        WindowDevis wd;
+        public Formulaire(WindowDevis wd)
         {
             InitializeComponent();
+            this.wd = wd;
+            Devis d = Business.d;
+            Prix.Content = d.Total;
+            Nom.Content = d.Nom;
+            Email.Content = d.Email;
+            Id.Content = d.Id;
         }
     }
 }
