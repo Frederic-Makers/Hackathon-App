@@ -5,32 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hackathon_App"
         mc:Ignorable="d"
-        Title="WindowEditDevis" Height="613.249" Width="1058.594" Background="#FF3A513A">
+        Title="WindowEditDevis" Height="613.249" Width="886.594" Background="#FF3A513A" WindowStartupLocation="CenterScreen">
     <DockPanel HorizontalAlignment="Left" Width="1056">
-        <Grid Width="1052" Background="#FF3A513A">
+        <Grid Width="972" Background="#FF3A513A">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Label x:Name="labelTitre" Content="EDITER LE DEVIS N°" Height="40" Margin="417,38,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.ColumnSpan="2" FontSize="16" Foreground="White" HorizontalAlignment="Left" Width="224"/>
+            <Image Source="/img/4d129416-afc6-4d28-b356-13072263a513_200x200.png" Grid.ColumnSpan="2" Margin="-185,0,342,16" Opacity="0.09" />
+            <Label x:Name="labelTitre" Content="EDITER LE DEVIS N°" Height="40" Margin="185,23,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="White" HorizontalAlignment="Left" Width="224" Grid.Column="1"/>
 
-            <Label Content="Nom" HorizontalAlignment="Left" Height="26" Margin="49,110,0,0" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
-            <Label Content="Prenom" HorizontalAlignment="Left" Height="30" Margin="49,141,0,0" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
-            <Label Content="Date" HorizontalAlignment="Left" Height="25" Margin="49,181,0,0" VerticalAlignment="Top" Width="140" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
-            <Label Content="Email" HorizontalAlignment="Left" Height="25" Margin="49,211,0,0" VerticalAlignment="Top" Width="140" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
-            <Label Content="Exigences" HorizontalAlignment="Left" Height="28" Margin="49,274,0,0" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
-            <TextBox x:Name="Nom" Text="" Height="26" Margin="147,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}" Background="#CCDDDDDD" HorizontalAlignment="Left" Width="381"/>
-            <TextBox x:Name="Prenom" Text="" Height="35" Margin="147,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="#CCDDDDDD" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="381"/>
-            <DatePicker x:Name="Date" Text="" HorizontalAlignment="Left" Height="25" Margin="147,181,0,0" VerticalAlignment="Top" Width="381" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2"  Background="#CCDDDDDD"/>
-            <TextBox x:Name="Email" Text="" HorizontalAlignment="Left" Height="25" Margin="147,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="381" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}" Background="#CCDDDDDD"/>
-            <TextBox x:Name="Exigence" Text="" HorizontalAlignment="Left" Height="165" Margin="147,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="381" Grid.ColumnSpan="2" Background="#CCDDDDDD" VerticalScrollBarVisibility="Auto" />
-            <Button x:Name="button1" Click="Edit_Click" Content="Editer" Margin="288,0,0,30" Grid.ColumnSpan="2" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" HorizontalAlignment="Left" Width="476" Height="38" VerticalAlignment="Bottom"/>
-            <Label Content="Numéro" HorizontalAlignment="Left" Height="25" Margin="49,454,0,0" VerticalAlignment="Top" Width="140" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
-            <TextBox x:Name="Numero" Text="" HorizontalAlignment="Left" Height="25" Margin="147,454,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="381" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}" Background="#CCDDDDDD"/>
-            <DataGrid x:Name="LoadPrestataireSelected" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="280" Margin="601,141,0,0" VerticalAlignment="Top" Width="380" BorderBrush="#FF2E5F8F" Padding="1" Background="#FFBDC1BD" />
-            <Label Content="Liste des Prestataires" HorizontalAlignment="Left" Height="26" Margin="724,103,0,0" VerticalAlignment="Top" Width="132" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
-            <Label Content="Traité" HorizontalAlignment="Left" Height="25" Margin="601,454,0,0" VerticalAlignment="Top" Width="57" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
-            <CheckBox x:Name="isTraite" Grid.ColumnSpan="2" Content="" HorizontalAlignment="Left" Margin="658,460,0,0" VerticalAlignment="Top" Width="48" Padding="8,-1,0,0" Height="19" BorderThickness="1" IsChecked="False"/>
+            <Label Content="Nom" HorizontalAlignment="Left" Height="26" Margin="2,110,0,0" VerticalAlignment="Top" Width="82" Foreground="#FFB7C3C8" FontWeight="Bold" Grid.Column="1"/>
+            <Label Content="Prenom" HorizontalAlignment="Left" Height="30" Margin="2,141,0,0" VerticalAlignment="Top" Width="82" Foreground="#FFB7C3C8" FontWeight="Bold" Grid.Column="1"/>
+            <Label Content="Date" HorizontalAlignment="Left" Height="25" Margin="2,181,0,0" VerticalAlignment="Top" Width="140" Foreground="#FFB7C3C8" FontWeight="Bold" Grid.Column="1"/>
+            <Label Content="Email" HorizontalAlignment="Left" Height="25" Margin="2,211,0,0" VerticalAlignment="Top" Width="140" Foreground="#FFB7C3C8" FontWeight="Bold" Grid.Column="1"/>
+            <Label Content="Exigences" HorizontalAlignment="Left" Height="28" Margin="2,274,0,0" VerticalAlignment="Top" Width="82" Foreground="#FFB7C3C8" FontWeight="Bold" Grid.Column="1"/>
+            <TextBox x:Name="Nom" Text="" Height="26" Margin="94,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderBrush="Gray" BorderThickness="1" Style="{DynamicResource RoundedTextBoxStyle}" Background="#CCDDDDDD" HorizontalAlignment="Left" Width="381" Grid.Column="1"/>
+            <TextBox x:Name="Prenom" Text="" Height="35" Margin="94,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="#CCDDDDDD" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="381" Grid.Column="1"/>
+            <DatePicker x:Name="Date" Text="" HorizontalAlignment="Left" Height="25" Margin="94,181,0,0" VerticalAlignment="Top" Width="381" BorderBrush="Gray" BorderThickness="1"  Background="#CCDDDDDD" Grid.Column="1"/>
+            <TextBox x:Name="Email" Text="" HorizontalAlignment="Left" Height="25" Margin="94,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="381" BorderBrush="Gray" BorderThickness="1" Style="{DynamicResource RoundedTextBoxStyle}" Background="#CCDDDDDD" Grid.Column="1"/>
+            <TextBox x:Name="Exigence" Text="" HorizontalAlignment="Left" Height="165" Margin="94,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="381" Background="#CCDDDDDD" VerticalScrollBarVisibility="Auto" Grid.Column="1" />
+            <Button x:Name="button1" Click="Edit_Click" Content="Editer" Margin="164,0,0,26" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" HorizontalAlignment="Left" Width="311" Height="38" VerticalAlignment="Bottom" Grid.Column="1"/>
+            <Label Content="Numéro" HorizontalAlignment="Left" Height="25" Margin="2,454,0,0" VerticalAlignment="Top" Width="140" Foreground="#FFB7C3C8" FontWeight="Bold" Grid.Column="1"/>
+            <TextBox x:Name="Numero" Text="" HorizontalAlignment="Left" Height="25" Margin="94,454,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="381" BorderBrush="Gray" BorderThickness="1" Style="{DynamicResource RoundedTextBoxStyle}" Background="#CCDDDDDD" Grid.Column="1"/>
+            <DataGrid x:Name="LoadPrestataireSelected" HorizontalAlignment="Left" Height="447" Margin="498,109,0,0" VerticalAlignment="Top" Width="282" BorderBrush="#FF2E5F8F" Padding="1" Background="#FFBDC1BD" Grid.Column="1" />
+            <Label Content="Liste des Prestataires" HorizontalAlignment="Left" Height="26" Margin="498,78,0,0" VerticalAlignment="Top" Width="132" Foreground="#FFB7C3C8" FontWeight="Bold" Grid.Column="1"/>
+            <Label Content="Traité" HorizontalAlignment="Left" Height="25" Margin="80,521,0,0" VerticalAlignment="Top" Width="57" Foreground="#FFB7C3C8" FontWeight="Bold" Grid.Column="1"/>
+            <CheckBox x:Name="isTraite" Content="" HorizontalAlignment="Left" Margin="137,527,0,0" VerticalAlignment="Top" Width="48" Padding="8,-1,0,0" Height="19" BorderThickness="1" IsChecked="False" Grid.Column="1"/>
+
+
 
         </Grid>
     </DockPanel>
