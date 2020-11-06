@@ -46,22 +46,50 @@ namespace Hackathon_App
 
         private void GetWorkDevis_Click(object sender, RoutedEventArgs e)
         {
+            DevisBusiness.DevisAccess.GetDevis();
 
+            foreach (var item in Business.Devis)
+            {
+                if (item.isTraite != true)
+                {
+                    try
+                    {
+                        Boolean devisFinish = (item.isTraite);
+                        if (devisFinish == false)
+                        {
+                            Business.DevisWork.Add(item);
+                        }
+                    }
+                    catch (Exception) { }
+                }
+            }
+            Business.Devis.Clear();
+            Business.DevisFinish.Clear();
+            MyGridDevis.ItemsSource = Business.DevisWork;
         }
 
         private void GetFinishDevis_Click(object sender, RoutedEventArgs e)
         {
+            DevisBusiness.DevisAccess.GetDevis();
 
-        }
-
-        private void CalculTotalDevis_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void GetOutPrestaDevis_Click(object sender, RoutedEventArgs e)
-        {
-
+            foreach (var item in Business.Devis)
+            {
+                if (item.isTraite != false)
+                {
+                    try
+                    {
+                        Boolean devisFinish = (item.isTraite);
+                        if (devisFinish == true)
+                        {
+                            Business.DevisFinish.Add(item);
+                        }
+                    }
+                    catch (Exception) { }
+                }
+            }
+            Business.Devis.Clear();
+            Business.DevisWork.Clear();
+            MyGridDevis.ItemsSource = Business.DevisFinish;
         }
 
         private void ApercuDevis_Click(object sender, RoutedEventArgs e)
