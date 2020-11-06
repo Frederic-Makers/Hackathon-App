@@ -14,6 +14,7 @@ namespace PrestataireBusiness
         public String Email { get; set; }
         public String Exigence { get; set; }
         public String Numero { get; set; }
+        public Boolean isTraite { get; set; }
 
         public int Total { 
             get{
@@ -22,12 +23,13 @@ namespace PrestataireBusiness
         }
         public List<DevisPrestataire> DevisPrestataires { get; set; }
 
-        public List<Prestataire> PrestatairesIndisponibles { get; set; }
+        
 
         public Devis()
         {
             this.DevisPrestataires = new List<DevisPrestataire>();
-            this.PrestatairesIndisponibles = new List<Prestataire>();
+            this.isTraite = false;
+        
         }
         public Devis(int id, String nom, String prenom, DateTime date, String email, String exigence, String numero) : this()
         {
