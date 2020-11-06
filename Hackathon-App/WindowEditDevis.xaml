@@ -27,7 +27,7 @@
             <Button x:Name="button1" Click="Edit_Click" Content="Editer" Margin="49,0,0,38" Grid.ColumnSpan="2" FontWeight="Bold" Style="{DynamicResource RoundedButtonStyle}" HorizontalAlignment="Left" Width="476" Height="36" VerticalAlignment="Bottom"/>
             <Label Content="Numéro" HorizontalAlignment="Left" Height="25" Margin="49,454,0,0" VerticalAlignment="Top" Width="140" Grid.ColumnSpan="2" Foreground="#FFB7C3C8" FontWeight="Bold"/>
             <TextBox x:Name="Numero" Text="" HorizontalAlignment="Left" Height="25" Margin="147,454,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="381" BorderBrush="Gray" BorderThickness="1" Grid.ColumnSpan="2" Style="{DynamicResource RoundedTextBoxStyle}" Background="#CCDDDDDD"/>
-            <DataGrid x:Name="LoadPrestataireSelected" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="391" Margin="600,110,0,0" VerticalAlignment="Top" Width="380" BorderBrush="#FF2E5F8F" Padding="1" Background="#FFBDC1BD"/>
+            <DataGrid x:Name="LoadPrestataireSelected" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="391" Margin="600,110,0,0" VerticalAlignment="Top" Width="380" BorderBrush="#FF2E5F8F" Padding="1" Background="#FFBDC1BD" />
 
         </Grid>
     </DockPanel>
