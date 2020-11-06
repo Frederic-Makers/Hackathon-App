@@ -132,7 +132,7 @@ namespace Hackathon_App
             wd.Email.Text = d2.Email;
             wd.Exigence.Text = d2.Exigence;
             wd.Numero.Text = d2.Numero;
-
+            wd.isTraite.IsChecked = d2.isTraite;
 
             wd.LoadPrestataireSelected.ItemsSource = d.DevisPrestataires;
             }
